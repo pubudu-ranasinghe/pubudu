@@ -4649,6 +4649,12 @@ gatsby-page-utils@^0.0.28:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
+gatsby-plugin-google-analytics@^2.1.24:
+  version "2.1.24"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.24.tgz#ab1aa59503d236d61873a1b14205976d89ddabb3"
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+
 gatsby-plugin-manifest@^2.2.25:
   version "2.2.25"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.25.tgz#1ea05d73bd6d692d8f67f0404ce441dd656a7ec9"
