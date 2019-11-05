@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import postStyle from "./post.module.css"
 
 const HeroImage = styled.div`
   height: 200px;
@@ -26,15 +25,12 @@ const Body = styled.article`
   padding: 1rem;
 `
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+export default function Template({ data }) {
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <script src="https://gist.github.com/pubudu-ranasinghe/df3f7946f93c78883e2e6376903a6596.js"></script>
-      <div className={postStyle.post} style={{ padding: "1rem" }}>
+      <div className="post" style={{ padding: "1rem" }}>
         <HeroImage color={frontmatter.color} />
         <Title>{frontmatter.title}</Title>
         <Subtitle>{frontmatter.subtitle}</Subtitle>
