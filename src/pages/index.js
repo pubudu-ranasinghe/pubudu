@@ -29,7 +29,7 @@ export const pageQuery = graphql`
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Pubudu" />
+      <SEO title="Pubudu Ranasinghe" />
       <Hero />
       {data.allMarkdownRemark.edges.map(({ node }, i) => (
         <Article
@@ -44,7 +44,7 @@ const IndexPage = ({ data }) => {
       ))}
       <Article
         title="Interested in my work?"
-        sub="Feel free to contact me at pubudutr@gmail.com"
+        sub="Let's get in touch at pubudutr@gmail.com"
         align="center"
         color="#FF441F"
       />
