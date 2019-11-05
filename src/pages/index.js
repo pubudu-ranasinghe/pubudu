@@ -47,6 +47,8 @@ const IndexPage = ({ data }) => {
         sub="Let's get in touch at pubudutr@gmail.com"
         align="center"
         color="#FF441F"
+        link="mailto:pubudutr@gmail.com?subject=Hi%20Pubudu"
+        external
       />
     </Layout>
   )

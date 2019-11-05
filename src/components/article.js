@@ -25,23 +25,32 @@ const Body = styled.div`
 const Title = styled.h2`
   padding: 1rem 1rem 0.5rem 1rem;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 `
 
 const Subtitle = styled.p`
   padding: 0 1rem 1rem 1rem;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 1rem;
 `
 
-const Article = ({ title, sub, link, align, full, color }) => (
+const Article = ({ title, sub, link, align, full, color, external }) => (
   <Wrapper full={full}>
-    <Link to={link} style={{ textDecoration: "none", width: "100%" }}>
-      <Body align={align} color={color}>
-        <Title>{title}</Title>
-        <Subtitle>{sub}</Subtitle>
-      </Body>
-    </Link>
+    {external ? (
+      <a href={link} style={{ textDecoration: "none", width: "100%" }}>
+        <Body align={align} color={color}>
+          <Title>{title}</Title>
+          <Subtitle>{sub}</Subtitle>
+        </Body>
+      </a>
+    ) : (
+      <Link to={link} style={{ textDecoration: "none", width: "100%" }}>
+        <Body align={align} color={color}>
+          <Title>{title}</Title>
+          <Subtitle>{sub}</Subtitle>
+        </Body>
+      </Link>
+    )}
   </Wrapper>
 )
 
@@ -52,13 +61,15 @@ Article.propTypes = {
   align: PropTypes.string,
   full: PropTypes.bool,
   color: PropTypes.string,
+  external: PropTypes.bool,
 }
 
 Article.defaultProps = {
   title: ``,
   sub: ``,
   align: `start`,
-  link: `#`
+  link: `#`,
+  external: false,
 }
 
 export default Article
