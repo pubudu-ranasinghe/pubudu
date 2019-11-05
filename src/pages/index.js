@@ -29,7 +29,7 @@ export const pageQuery = graphql`
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Pubudu" />
       <Hero />
       {data.allMarkdownRemark.edges.map(({ node }, i) => (
         <Article

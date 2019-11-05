@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 
@@ -30,6 +31,7 @@ export default function Template({ data }) {
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
+      <SEO title={frontmatter.title} />
       <div className="post" style={{ padding: "1rem" }}>
         <HeroImage color={frontmatter.color} />
         <Title>{frontmatter.title}</Title>
