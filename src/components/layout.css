@@ -149,6 +149,7 @@ th:not([align]) {
 .post pre {
   background-color: #fafafa;
   padding: 1.25em;
+  overflow: scroll;
 }
 
 .post code {
