@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import Header from "./header"
+import constants from "../constants"
 import "./layout.css"
 
 const Container = styled.div`
@@ -24,6 +25,7 @@ const Container = styled.div`
 const Main = styled.main`
   display: flex;
   flex-wrap: wrap;
+  padding: ${constants.primaryMargin / 2}rem;
 `
 
 const Layout = ({ children }) => {
@@ -41,7 +43,9 @@ const Layout = ({ children }) => {
     <Container>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Main>{children}</Main>
-      <footer style={{ padding: "0 1rem", marginBottom: "1rem" }}>
+      <footer
+        style={{ padding: "0 1rem", marginBottom: "1rem", color: "#bababa" }}
+      >
         © {new Date().getFullYear()}
       </footer>
     </Container>

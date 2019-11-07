@@ -3,9 +3,11 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
+import constants from "../constants"
+
 const Wrapper = styled.article`
   display: flex;
-  padding: 1rem;
+  padding: ${constants.primaryMargin / 2}rem;
   width: ${props => (props.full ? "100%" : "50%")};
 `
 
@@ -23,15 +25,27 @@ const Body = styled.div`
 `
 
 const Title = styled.h2`
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: ${constants.primaryMargin}rem;
+  padding-bottom: ${constants.primaryMargin / 2}rem;
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  word-break: break-word;
+
+  @media (min-width: 768px) {
+    font-size: 1.3rem;
+  }
 `
 
 const Subtitle = styled.p`
-  padding: 0 1rem 1rem 1rem;
+  padding: ${constants.primaryMargin}rem;
+  padding-top: 0;
   color: #fff;
   font-size: 1rem;
+  word-break: break-word;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 `
 
 const Article = ({ title, sub, link, align, full, color, external }) => (

@@ -3,11 +3,17 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
+import constants from "../constants"
+
 const StyledLink = styled.a`
-  padding: 1rem;
   display: inline-block;
   text-decoration: none;
   color: #0f1013;
+  padding: ${constants.primaryMargin}rem;
+
+  @media (min-width: 768px) {
+    padding: ${constants.primaryMarginMd}rem;
+  }
 `
 
 const Nav = styled.div`
@@ -17,18 +23,25 @@ const Nav = styled.div`
 `
 
 const LogoLink = styled(Link)`
-  padding: 1rem;
   display: inline-block;
   text-decoration: none;
   color: #0f1013;
   font-weight: bold;
+  padding: ${constants.primaryMargin}rem;
+
+  @media (min-width: 768px) {
+    padding: ${constants.primaryMarginMd}rem;
+  }
 `
 
 const Header = ({ siteTitle }) => (
   <Nav>
     <LogoLink to="/">{siteTitle}</LogoLink>
     <span>
-      <StyledLink href="https://github.com/pubudu-ranasinghe">github</StyledLink>/
+      <StyledLink href="https://github.com/pubudu-ranasinghe">
+        github
+      </StyledLink>
+      /
       <StyledLink href="https://www.linkedin.com/in/pubuduranasinghe/">
         linkedin
       </StyledLink>
