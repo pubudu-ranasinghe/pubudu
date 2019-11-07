@@ -49,12 +49,15 @@ We will start with a very simple Todo application which has three components as 
 Let’s add the following components.
 
 `gist:pubudu-ranasinghe/df3f7946f93c78883e2e6376903a6596`
+
 <div class="caption">components/Items.js</div>
 
 `gist:pubudu-ranasinghe/c2c20334776650a57c737523d3077e75`
+
 <div class="caption">App.css to make it look nice :)</div>
 
 `gist:pubudu-ranasinghe/9df053a0dd9e5504c50acd73487889df`
+
 <div class="caption">App.js</div>
 
 Next we want to introduce a state to store the list of todos and be able to add and remove todo items.
@@ -105,26 +108,31 @@ Lets start with creating a new context for our todos in `contexts/TodoContext.js
 Update the `App` component as follows to provide the `TodoContext` to our component tree.
 
 `gist:pubudu-ranasinghe/8427dbae2c713ff0089c3f773f080445`
+
 <div class="caption">App.js</div>
 
 Next we can use the `TodoContext.Consumer` within our child components and have access to the state value passed to `TodoContext.Provider`
 
 `gist:pubudu-ranasinghe/f2a4949d759377a833a65afa71baf575`
+
 <div class="caption">Items.js</div>
 
 You may notice that we are repeating the `TodoContext.Consumer` wrapper everywhere we need to consume the context value. We can refactor this using the `useContext()` hook and make it less verbose.
 
 `gist:pubudu-ranasinghe/66c0b15127584d8f0326b7955159b5e3`
+
 <div class="caption">Updated Items.js to use useContext</div>
 
 At the moment we are storing our global state in the `App` component. This is not a very desirable behavior specially as our todo state grows in complexity and it’s not exactly the responsibility of `App` component to hold the global state. So let’s move it to our already created `TodoContext`
 
 `gist:pubudu-ranasinghe/064f080bb433f86a3c2f69e683344637`
+
 <div class="caption">contexts/TodoContext.js</div>
 
 We are exporting two functions here. One is a the `TodoProvider` component which is actually a higher order component wrapping the `TodoContext.Provider` along with a state. This becomes our global store and we need to update `App` component as follows.
 
 `gist:pubudu-ranasinghe/a66fb1c3edc52b0e16f07ae1dacd7fdc`
+
 <div class="caption">Our App.js is a lot more simplified and does not have todo logic in it.</div>
 
 The second export is simply a [custom hook](https://reactjs.org/docs/hooks-custom.html) wrapping the `useContext` hook which already has `TodoContext` passed into it. In `Items.js` you need to import useTodoContext and replace,
@@ -139,17 +147,18 @@ with
 const todoContext = useTodoContext();
 ```
 
-That’s it! Now we pretty much have a neat global store built with React Context and Hooks. Following the same pattern you can create new *ContextProviders*, wrap your application with it and then use a custom useContext hooks anywhere in your component hierarchy to use it as a store. Feel free to take a break at this point ☕
+That’s it! Now we pretty much have a neat global store built with React Context and Hooks. Following the same pattern you can create new _ContextProviders_, wrap your application with it and then use a custom useContext hooks anywhere in your component hierarchy to use it as a store. Feel free to take a break at this point ☕
 
 ## Adding Reducers and Actions
 
 > The following sections are heavily inspired by Redux. If you are not familiar with redux please checkout the [documentation first.](https://redux.js.org/introduction/getting-started)
 
-Our state update logic is defined as functions in `TodoProvider` and each of these functions are stored as references in the state itself which can be accessed by consuming components to update the state. Following the redux pattern, we can introduce *Actions* and *Reducers* to our state manager. We can have actions that describe what happens to our state and a reducer which will handle state changes corresponding to the said actions.
+Our state update logic is defined as functions in `TodoProvider` and each of these functions are stored as references in the state itself which can be accessed by consuming components to update the state. Following the redux pattern, we can introduce _Actions_ and _Reducers_ to our state manager. We can have actions that describe what happens to our state and a reducer which will handle state changes corresponding to the said actions.
 
 Let’s start with creating the actions `ADD_TODO, REMOVE_TODO and CLEAR_ALL.` For now I’m going to add all the actions and the reducer inside the `TodoContext.js` file itself. If this gets too large feel free to split your code into separate files.
 
 `gist:pubudu-ranasinghe/e8f3037ce03fb694dd5830e7a502e832`
+
 <div class="caption">Updated TodoContext.js with actions and reducer</div>
 
 First I have created a few actions and corresponding action creators, pretty similar to redux. Then we have the reducer which is again a simple pure function which takes state and action as arguments and return the updated state.
@@ -157,6 +166,7 @@ First I have created a few actions and corresponding action creators, pretty sim
 Then inside our `TodoProvider` we are changing the `useState` hook to `useReducer` hook. It accepts a reducer and an initial state(unlike in redux where we pass the initial state to the reducer, it’s recommended to pass initial state into `useReducer` hook). The two values returned by `useReducer` is the state itself and a dispatch function which we can use to dispatch our actions. Since our consumer components would want to use the dispatch function we pass it as a value in `TodoProvider`. Now we are all set to use the state and dispatch actions from our consumer components.
 
 `gist:pubudu-ranasinghe/1062f79495c96d4139d497dc6715db8f`
+
 <div class="caption">Updated Items.js to use actions and dipatcher</div>
 
 Notice how I have destructured the dispatch method from `useTodoContext()` and used it to dispatch an action of adding a todo. Similarly we use state value and dipatch along with relevant actions to list todos and remove todos.
@@ -187,25 +197,31 @@ yarn add react-router-dom
 ```
 
 `gist:pubudu-ranasinghe/9aee8f14caf6b40e076ba9a726a0e04e`
+
 <div class="caption">components/Todos.js</div>
 
 `gist:pubudu-ranasinghe/5519be3daff0ef9359932493434c5992`
+
 <div class="caption">components/Login.js</div>
 
 `gist:pubudu-ranasinghe/d4e9c13f7312886299a6354ab648fedf`
+
 <div class="caption">App.js</div>
 
 `gist:pubudu-ranasinghe/8a3dd4c9e37bc81eee258df40c27a248`
+
 <div class="caption">api/auth.js</div>
 
 We can follow the same pattern we used for `TodoContext` to create `AuthContext` for authentication which is pretty straightforward and self explanatory.
 
 `gist:pubudu-ranasinghe/b3c4a6a33c7e2b663b51d51144899362`
+
 <div class="caption">contexts/AuthContext.js</div>
 
 Before we use the `AuthContext` we need to make sure we are providing it at the top of our application. So let’s wrap the entire app with `AuthProvider`. Meanwhile I’m going to enhance our `Greeting` component as well to use the auth state and display a greeting and a logout button.
 
 `gist:pubudu-ranasinghe/231b749aa7e9aefbdd3556e89c6e753d`
+
 <div class="caption">App.js</div>
 
 ## Add Login Functionality
@@ -219,11 +235,12 @@ Now that we have auth store configured we can start building the functionality o
 Next let us make the `/todos` route private so that only a logged in user can access it. Anyone else will need to be redirected back to the login page. We can do this by simply wrapping the react-router `Route` component with a higher order component and using the `AuthContext` inside it to decide whether to render the route or redirect to login page.
 
 `gist:pubudu-ranasinghe/fb9e5996bc948b21a0e6e004f800983c`
+
 <div class="caption">components/PrivateRoute.js</div>
 
 Now we can simply use `PrivateRoute` instead of `Route` to make any route inaccessible to logged out users.
 
-----
+---
 
 <br>
 
