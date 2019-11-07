@@ -1,7 +1,7 @@
 ---
 path: "/01-build-react-context-store"
 date: "2019-11-04"
-title: "Build a redux-like Store with React Context+Hooks"
+title: "How To Build a Redux-Like Store With React Context and Hooks"
 subtitle: "And add authentication along with routing to your app"
 color: "#09D3AC"
 ---
