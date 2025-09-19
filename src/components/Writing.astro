@@ -1,0 +1,58 @@
+---
+// No props needed for now since we're using static content
+---
+
+<section class="writing container">
+  <h2>Writing</h2>
+  <ul>
+    <li><a href="#">How Github Copilot is Changing the Way We Code <sup>Soon</sup></a></li>
+    <li><a href="#">How to build a Redux like store with React Context</a></li>
+    <li><a href="#">More articles...</a></li>
+  </ul>
+</section>
+
+<style>
+  .writing {
+    padding-bottom: var(--hero-padding-vertical);
+  }
+
+  .writing h2 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-stone-7);
+    line-height: var(--line-height-base);
+  }
+
+  .writing ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: var(--max-width-content);
+  }
+
+  .writing li {
+    margin-bottom: 16px;
+  }
+
+  .writing li:last-child {
+    margin-bottom: 0;
+  }
+
+  .writing a {
+    color: var(--color-stone-5);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    text-decoration: none;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .writing a:hover {
+    color: var(--color-stone-8);
+  }
+
+  .writing sup {
+    font-size: 0.6em;
+    color: var(--color-stone-7);
+  }
+</style>

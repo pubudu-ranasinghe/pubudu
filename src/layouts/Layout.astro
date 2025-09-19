@@ -64,6 +64,7 @@ const {
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-base);
     line-height: var(--line-height-base);
+    letter-spacing: var(--letter-spacing-base);
     color: var(--color-stone-5);
   }
 
@@ -79,14 +80,16 @@ const {
   :root {
     /* Typography */
     --font-size-base: 18px;
-    --line-height-base: 1.5;
-    --font-weight-base: 300;
-    --font-weight-medium: 450;
+    --line-height-base: 28px;
+    --font-weight-base: 400;
+    --font-weight-medium: 500;
+    --letter-spacing-base:  -0.01em;
 
     /* Colors */
     --color-stone-5: oklch(55.3% 0.013 58.071);
     --color-stone-7: oklch(37.4% 0.01 67.558);
     --color-stone-8: oklch(26.8% 0.007 34.298);
+    --ds-gray-900: oklch(51% 0 0);
 
     /* Layout */
     --container-padding-horizontal: 32px;
@@ -123,7 +126,7 @@ const {
   }
 
   p > span {
-    color: var(--color-stone-5);
+    color: var(--color-stone-8);
   }
 
   a {

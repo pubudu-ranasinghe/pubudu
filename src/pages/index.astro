@@ -1,5 +1,6 @@
 ---
 import Intro from "../components/Intro.astro";
+import Writing from "../components/Writing.astro";
 import BackgroundImage from "../components/BackgroundImage.astro";
 import Layout from "../layouts/Layout.astro";
 import FinePrint from "../components/FinePrint.astro";
@@ -14,6 +15,7 @@ const keywords =
 
 <Layout title={pageTitle} description={pageDescription} keywords={keywords}>
   <Intro />
+  <Writing />
   <BackgroundImage />
   <FinePrint />
 </Layout>
