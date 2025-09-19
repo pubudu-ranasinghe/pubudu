@@ -1,19 +1,19 @@
 ---
-import Intro from '../components/Intro.astro';
-import Layout from '../layouts/Layout.astro';
-import FinePrint from '../components/FinePrint.astro';
+import Intro from "../components/Intro.astro";
+import BackgroundImage from "../components/BackgroundImage.astro";
+import Layout from "../layouts/Layout.astro";
+import FinePrint from "../components/FinePrint.astro";
 
 // Page metadata
 const pageTitle = "Pubudu Ranasinghe - Software Engineer";
-const pageDescription = "Software Engineer based in Sri Lanka, passionate about tech, building products, and experimenting with design & photography.";
-const keywords = "software engineer, web development, Sri Lanka, tech, photography, design, Pubudu Ranasinghe";
+const pageDescription =
+  "Software Engineer based in Sri Lanka, passionate about tech, building products, and experimenting with design & photography.";
+const keywords =
+  "software engineer, web development, Sri Lanka, tech, photography, design, Pubudu Ranasinghe";
 ---
 
-<Layout 
-  title={pageTitle} 
-  description={pageDescription}
-  keywords={keywords}
->
+<Layout title={pageTitle} description={pageDescription} keywords={keywords}>
   <Intro />
+  <BackgroundImage />
   <FinePrint />
 </Layout>

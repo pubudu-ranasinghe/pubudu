@@ -1,33 +1,26 @@
 ---
-import { Image } from "astro:assets";
 import Logo from "./Logo.astro";
 import SocialLinks from "./SocialLinks.astro";
-import background from "../assets/0030_small.png";
 
 export interface Props {
   name?: string;
   title?: string;
   description?: string;
-  imageAlt?: string;
 }
 
-const { 
-  name = "Pubudu Ranasinghe",
-  title = "Software Engineer",
-  imageAlt = "Just a background image"
-} = Astro.props;
+const { name = "Pubudu Ranasinghe", title = "Software Engineer" } = Astro.props;
 ---
 
 <article id="container">
   <main>
-    <header class="hero">
+    <header class="hero container">
       <Logo />
 
       <h1>
         {name}
         <span>{title}</span>
       </h1>
-      
+
       <section class="bio">
         <p>
           I am a <span>passionate engineer</span> based in the beautiful island of
@@ -37,29 +30,28 @@ const {
         </p>
         <p>
           Previously I worked at <span
-            ><a href="https://99x.io/" target="_blank" rel="noopener noreferrer">99X</a> & <a
-              href="https://www.itelasoft.com.au/" target="_blank" rel="noopener noreferrer">iTelaSoft</a
+            ><a href="https://99x.io/" target="_blank" rel="noopener noreferrer"
+              >99X</a
+            > & <a
+              href="https://www.itelasoft.com.au/"
+              target="_blank"
+              rel="noopener noreferrer">iTelaSoft</a
             ></span
           >.
           <br />
           Currently I work as a <span
-            >Staff Engineer at <a href="https://www.nagarro.com/en/" target="_blank" rel="noopener noreferrer">Nagarro</a
+            >Staff Engineer at <a
+              href="https://www.nagarro.com/en/"
+              target="_blank"
+              rel="noopener noreferrer">Nagarro</a
             ></span
           > and co-founder of <span>TrizenLabs</span>.
         </p>
       </section>
-      
+
       <SocialLinks />
     </header>
   </main>
-  <aside id="image">
-    <Image 
-      src={background} 
-      alt={imageAlt}
-      loading="eager"
-      decoding="sync"
-    />
-  </aside>
 </article>
 
 <style>
@@ -76,7 +68,7 @@ const {
     display: block;
     font-weight: var(--font-weight-base);
   }
-  
+
   main {
     display: flex;
     flex-direction: column;
@@ -88,22 +80,11 @@ const {
     align-items: start;
     flex-direction: column;
     justify-content: center;
-    padding: var(--hero-padding);
+    padding-top: var(--hero-padding-vertical);
+    padding-bottom: var(--hero-padding-vertical);
   }
 
   .bio > p {
     max-width: var(--max-width-content);
-  }
-
-  #image {
-    height: var(--image-height);
-    overflow: hidden;
-  }
-
-  #image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 </style>
