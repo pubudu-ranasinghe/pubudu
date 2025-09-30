@@ -1,0 +1,191 @@
+---
+import Layout from "./Layout.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  publishDate: Date;
+  tags?: string[];
+}
+
+const { title, description, publishDate, tags = [] } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+}).format(publishDate);
+---
+
+<Layout title={`${title} - Pubudu Ranasinghe`} description={description}>
+  <article class="blog-post">
+    <header class="blog-header container">
+      <a href="/" class="back-link">← Back to home</a>
+      <h1>{title}</h1>
+      <div class="meta">
+        <time datetime={publishDate.toISOString()}>{formattedDate}</time>
+        {
+          tags.length > 0 && (
+            <div class="tags">
+              {tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </header>
+    <div class="blog-content container">
+      <slot />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .blog-post {
+    padding-top: var(--hero-padding-vertical);
+    padding-bottom: var(--hero-padding-vertical);
+  }
+
+  .blog-header {
+    margin-bottom: 48px;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: var(--color-stone-5);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .back-link:hover {
+    color: var(--color-stone-8);
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-stone-8);
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+    max-width: var(--max-width-content);
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--color-stone-5);
+    font-size: 16px;
+  }
+
+  time {
+    color: var(--color-stone-7);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    background: oklch(90% 0.01 58.071);
+    color: var(--color-stone-7);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .blog-content {
+    max-width: var(--max-width-content);
+  }
+
+  .blog-content :global(h2) {
+    font-size: 24px;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-stone-8);
+    margin: 48px 0 16px 0;
+    line-height: 1.3;
+  }
+
+  .blog-content :global(h3) {
+    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-stone-7);
+    margin: 32px 0 12px 0;
+    line-height: 1.4;
+  }
+
+  .blog-content :global(p) {
+    margin-bottom: 16px;
+    color: var(--color-stone-5);
+  }
+
+  .blog-content :global(ul),
+  .blog-content :global(ol) {
+    margin: 16px 0;
+    padding-left: 24px;
+    color: var(--color-stone-5);
+  }
+
+  .blog-content :global(li) {
+    margin-bottom: 8px;
+  }
+
+  .blog-content :global(code) {
+    background: oklch(95% 0.005 58.071);
+    color: var(--color-stone-8);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+      "Courier New", monospace;
+  }
+
+  .blog-content :global(pre) {
+    background: oklch(95% 0.005 58.071);
+    border: 1px solid oklch(85% 0.01 58.071);
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 24px 0;
+  }
+
+  .blog-content :global(pre code) {
+    background: none;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .blog-content :global(blockquote) {
+    border-left: 3px solid var(--color-stone-7);
+    padding-left: 20px;
+    margin: 24px 0;
+    color: var(--color-stone-7);
+    font-style: italic;
+  }
+
+  .blog-content :global(strong) {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-stone-8);
+  }
+
+  @media (width >= 48rem) {
+    h1 {
+      font-size: 40px;
+    }
+
+    .blog-content :global(h2) {
+      font-size: 28px;
+    }
+
+    .blog-content :global(h3) {
+      font-size: 22px;
+    }
+  }
+</style>

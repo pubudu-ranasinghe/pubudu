@@ -1,13 +1,31 @@
 ---
-// No props needed for now since we're using static content
+import { getCollection, type CollectionEntry } from "astro:content";
+
+type BlogEntry = CollectionEntry<"blog">;
+
+// Fetch published blog posts, sorted by date (newest first)
+const posts = await getCollection("blog", ({ data }: BlogEntry) => {
+  return data.draft !== true;
+});
+
+const sortedPosts = posts.sort(
+  (a: BlogEntry, b: BlogEntry) => 
+    b.data.publishDate.getTime() - a.data.publishDate.getTime()
+);
 ---
 
 <section class="writing container">
   <h2>Writing</h2>
   <ul>
-    <li><a href="#">How Github Copilot is Changing the Way We Code <sup>Soon</sup></a></li>
-    <li><a href="#">How to build a Redux like store with React Context</a></li>
-    <li><a href="#">More articles...</a></li>
+    {
+      sortedPosts.map((post: BlogEntry) => (
+        <li>
+          <a href={`/${post.slug}`}>
+            {post.data.title}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </section>
 
