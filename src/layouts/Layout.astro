@@ -68,6 +68,8 @@ const {
     line-height: var(--line-height-base);
     letter-spacing: var(--letter-spacing-base);
     color: var(--color-stone-5);
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
   }
 
   @font-face {
@@ -85,7 +87,7 @@ const {
     --line-height-base: 28px;
     --font-weight-base: 400;
     --font-weight-medium: 500;
-    --letter-spacing-base:  -0.01em;
+    --letter-spacing-base:  normal;
 
     /* Colors */
     --color-stone-5: oklch(55.3% 0.013 58.071);
@@ -97,7 +99,7 @@ const {
     --container-padding-horizontal: 32px;
     --hero-padding-vertical: 72px;
     --image-height: 450px;
-    --max-width-content: 800px;
+    --max-width-content: 680px;
   }
 
   @media (width >= 48rem) {
@@ -119,8 +121,8 @@ const {
   }
 
   .container {
-    padding-left: var(--container-padding-horizontal);
-    padding-right: var(--container-padding-horizontal);
+    max-width: var(--max-width-content);
+    margin: 0 auto;
   }
 
   p {
