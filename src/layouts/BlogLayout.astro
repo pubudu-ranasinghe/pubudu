@@ -9,34 +9,16 @@ export interface Props {
   tags?: string[];
 }
 
-const { title, description, publishDate, tags = [] } = Astro.props;
-
-const formattedDate = new Intl.DateTimeFormat("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-}).format(publishDate);
+const { title, description } = Astro.props;
 ---
 
 <Layout title={`${title} - Pubudu Ranasinghe`} description={description}>
-    <div class="container">
-      <Header compact />
+  <div class="container">
+    <Header compact />
   </div>
   <article class="blog-post">
     <header class="blog-header container">
       <h1>{title}</h1>
-      <div class="meta">
-        <time datetime={publishDate.toISOString()}>{formattedDate}</time>
-        {
-          tags.length > 0 && (
-            <div class="tags">
-              {tags.map((tag) => (
-                <span class="tag">{tag}</span>
-              ))}
-            </div>
-          )
-        }
-      </div>
     </header>
     <div class="blog-content container">
       <slot />
@@ -54,22 +36,12 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
     margin-bottom: 48px;
   }
 
-  .back-link {
-    display: inline-block;
-    margin-bottom: 32px;
-    color: var(--color-stone-5);
-    text-decoration: none;
-    font-size: var(--font-size-base);
-    transition-duration: 0.3s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
   .back-link:hover {
     color: var(--color-stone-8);
   }
 
   h1 {
-    font-size: 32px;
+    font-size: var(--font-size-2);
     font-weight: var(--font-weight-medium);
     color: var(--color-stone-8);
     line-height: 1.2;
@@ -77,38 +49,12 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
     max-width: var(--max-width-content);
   }
 
-  .meta {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    color: var(--color-stone-5);
-    font-size: 16px;
-  }
-
-  time {
-    color: var(--color-stone-7);
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tag {
-    background: oklch(90% 0.01 58.071);
-    color: var(--color-stone-7);
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-
   .blog-content {
     max-width: var(--max-width-content);
   }
 
   .blog-content :global(h2) {
-    font-size: 24px;
+    font-size: var(--font-size-base);
     font-weight: var(--font-weight-medium);
     color: var(--color-stone-8);
     margin: 48px 0 16px 0;
@@ -116,7 +62,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   }
 
   .blog-content :global(h3) {
-    font-size: 20px;
+    font-size: var(--font-size-base);
     font-weight: var(--font-weight-medium);
     color: var(--color-stone-7);
     margin: 32px 0 12px 0;
@@ -126,6 +72,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   .blog-content :global(p) {
     margin-bottom: 16px;
     color: var(--color-stone-5);
+    text-wrap: pretty;
   }
 
   .blog-content :global(ul),
@@ -176,19 +123,5 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   .blog-content :global(strong) {
     font-weight: var(--font-weight-medium);
     color: var(--color-stone-8);
-  }
-
-  @media (width >= 48rem) {
-    h1 {
-      font-size: 40px;
-    }
-
-    .blog-content :global(h2) {
-      font-size: 28px;
-    }
-
-    .blog-content :global(h3) {
-      font-size: 22px;
-    }
   }
 </style>

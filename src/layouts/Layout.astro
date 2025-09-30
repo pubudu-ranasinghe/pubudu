@@ -83,7 +83,8 @@ const {
 
   :root {
     /* Typography */
-    --font-size-base: 18px;
+    --font-size-base: 16px;
+    --font-size-2: 18px;
     --line-height-base: 28px;
     --font-weight-base: 400;
     --font-weight-medium: 500;
@@ -96,32 +97,16 @@ const {
     --ds-gray-900: oklch(51% 0 0);
 
     /* Layout */
-    --container-padding-horizontal: 32px;
+    --container-padding-horizontal: 24px;
     --hero-padding-vertical: 72px;
     --image-height: 450px;
-    --max-width-content: 680px;
-  }
-
-  @media (width >= 48rem) {
-    :root {
-      --container-padding-horizontal: 64px;
-    }
-  }
-
-  @media (width >= 64rem) {
-    :root {
-      --container-padding-horizontal: 128px;
-    }
-  }
-
-  @media (width >= 80rem) {
-    :root {
-      --container-padding-horizontal: 200px;
-    }
+    --max-width-content: 700px;
   }
 
   .container {
     max-width: var(--max-width-content);
+    padding-left: var(--container-padding-horizontal);
+    padding-right: var(--container-padding-horizontal);
     margin: 0 auto;
   }
 
