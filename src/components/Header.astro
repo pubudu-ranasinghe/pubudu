@@ -1,0 +1,56 @@
+---
+import Logo from "./Logo.astro";
+
+export interface Props {
+  name?: string;
+  title?: string;
+  compact?: boolean;
+}
+
+const {
+  name = "Pubudu Ranasinghe",
+  title = "Software Engineer",
+  compact = true,
+} = Astro.props;
+---
+
+<header class={`hero container ${compact ? "compact" : ""}`}>
+  {!compact && <Logo height={25} />}
+  <h1>
+    {name}
+    <span>{title}</span>
+  </h1>
+</header>
+
+<style>
+  h1 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-stone-7);
+    line-height: var(--line-height-base);
+  }
+
+  h1 span {
+    color: var(--color-stone-5);
+    display: block;
+    font-weight: var(--font-weight-base);
+  }
+
+  .hero {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: var(--hero-padding-vertical);
+    padding-bottom: 50px;
+  }
+
+  .hero.compact {
+    --line-height-base: 20px;
+
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+  }
+</style>
