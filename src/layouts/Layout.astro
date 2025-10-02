@@ -67,7 +67,8 @@ const {
     font-weight: var(--font-weight-base);
     line-height: var(--line-height-base);
     letter-spacing: var(--letter-spacing-base);
-    color: var(--color-stone-5);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg);
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
   }
@@ -88,19 +89,46 @@ const {
     --line-height-base: 28px;
     --font-weight-base: 400;
     --font-weight-medium: 500;
-    --letter-spacing-base:  normal;
+    --letter-spacing-base: normal;
 
-    /* Colors */
-    --color-stone-5: oklch(55.3% 0.013 58.071);
-    --color-stone-7: oklch(37.4% 0.01 67.558);
-    --color-stone-8: oklch(26.8% 0.007 34.298);
-    --ds-gray-900: oklch(51% 0 0);
+    /* Color Palette */
+    --stone-50: oklch(98.5% 0.001 106.423);
+    --stone-100: oklch(97% 0.001 106.424);
+    --stone-200: oklch(92.3% 0.003 48.717);
+    --stone-500: oklch(55.3% 0.013 58.071);
+    --stone-700: oklch(37.4% 0.01 67.558);
+    --stone-800: oklch(26.8% 0.007 34.298);
+    --stone-900: oklch(15% 0.002 264.705);
+    --stone-950: oklch(10% 0.002 264.705);
+    --accent-400: oklch(79.5% 0.184 86.047);
+    --gray-900: oklch(51% 0 0);
+
+    /* Semantic Variables - Light Theme */
+    --color-bg: var(--stone-50);
+    --color-surface: var(--stone-100);
+    --color-border: var(--stone-200);
+    --color-text-primary: var(--stone-500);
+    --color-text-secondary: var(--stone-700);
+    --color-text-emphasis: var(--stone-800);
 
     /* Layout */
     --container-padding-horizontal: 24px;
     --hero-padding-vertical: 72px;
     --image-height: 450px;
-    --max-width-content: 700px;
+    --max-width-content: 600px;
+    --border-radius-base: 8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Semantic Variables - Dark Theme */
+      --color-bg: var(--stone-900);
+      --color-surface: var(--stone-800);
+      --color-border: var(--stone-700);
+      --color-text-primary: var(--stone-50);
+      --color-text-secondary: var(--accent-400);
+      --color-text-emphasis: var(--stone-50);
+    }
   }
 
   .container {
@@ -115,7 +143,7 @@ const {
   }
 
   p > span {
-    color: var(--color-stone-8);
+    color: var(--color-text-emphasis);
   }
 
   a {
@@ -128,6 +156,6 @@ const {
   }
 
   a:hover {
-    color: var(--color-stone-8);
+    color: var(--color-text-emphasis);
   }
 </style>

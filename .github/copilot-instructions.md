@@ -19,8 +19,9 @@ This is a personal portfolio site for Pubudu Ranasinghe, built with Astro 5.11 a
 ## Design System
 
 **CSS Custom Properties in `Layout.astro`** — All design tokens are centralized in `:root`:
-- Typography: `--font-size-base` (18px), `--line-height-base` (28px), `--font-weight-base/medium`, `--letter-spacing-base`
-- Colors: OKLCH format (`--color-stone-5/7/8`) for perceptual uniformity
+- Typography: `--font-size-base` (16px), `--line-height-base` (28px), `--font-weight-base/medium`, `--letter-spacing-base`
+- Color Palette: Stone scale (`--stone-50` through `--stone-950`), `--accent-400`, `--gray-900` in OKLCH format for perceptual uniformity
+- Semantic Colors: `--color-bg`, `--color-surface`, `--color-border`, `--color-text-primary`, `--color-text-secondary`, `--color-text-emphasis` (automatically switch between palette colors for light/dark themes)
 - Layout: Responsive `--container-padding-horizontal` (32px → 64px → 128px → 200px at breakpoints), `--hero-padding-vertical` (72px), `--max-width-content` (800px)
 
 **Geist Sans font** — Variable font loaded from `/public/fonts/Geist[wght].woff2` with OpenType features enabled (`ss01-08`). Always reference this font stack in global styles.
