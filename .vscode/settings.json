@@ -1,0 +1,7 @@
+{
+    "[mdx]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wrappingIndent": "same",
+        "editor.wordWrapColumn": 84,
+    }
+}

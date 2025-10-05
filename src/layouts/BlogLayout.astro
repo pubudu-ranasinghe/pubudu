@@ -9,33 +9,34 @@ export interface Props {
   tags?: string[];
 }
 
-const { title, description } = Astro.props;
+const { title, description, publishDate, tags } = Astro.props;
+
+// Generate keywords from tags if available
+const keywords =
+  tags?.join(", ") || "blog, software engineering, web development";
 ---
 
-<Layout title={`${title} - Pubudu Ranasinghe`} description={description}>
+<Layout
+  title={`${title} - Pubudu Ranasinghe`}
+  description={description}
+  keywords={keywords}
+  type="article"
+  publishDate={publishDate}
+>
   <div class="container">
     <Header compact />
   </div>
-  <article class="blog-post">
-    <header class="blog-header container">
+  <article class="container pt-10 pb-20">
+    <header class="">
       <h1>{title}</h1>
     </header>
-    <div class="blog-content container">
+    <div class="blog-content">
       <slot />
     </div>
   </article>
 </Layout>
 
 <style>
-  .blog-post {
-    padding-top: var(--hero-padding-vertical);
-    padding-bottom: var(--hero-padding-vertical);
-  }
-
-  .blog-header {
-    margin-bottom: 48px;
-  }
-
   .back-link:hover {
     color: var(--color-text-emphasis);
   }
@@ -50,7 +51,7 @@ const { title, description } = Astro.props;
   }
 
   .blog-content {
-    max-width: var(--max-width-content);
+    /* max-width: var(--max-width-content); */
   }
 
   .blog-content :global(h2) {
@@ -97,12 +98,8 @@ const { title, description } = Astro.props;
   }
 
   .blog-content :global(pre) {
-    background: oklch(95% 0.005 58.071);
-    border: 1px solid oklch(85% 0.01 58.071);
-    border-radius: 6px;
     padding: 16px;
     overflow-x: auto;
-    margin: 24px 0;
   }
 
   .blog-content :global(pre code) {
@@ -120,11 +117,11 @@ const { title, description } = Astro.props;
     font-style: italic;
     background-color: var(--color-surface);
   }
-  
+
   .blog-content :global(blockquote p) {
     margin: 0;
   }
-  
+
   .blog-content :global(blockquote span) {
     display: block;
     margin-top: 4px;
