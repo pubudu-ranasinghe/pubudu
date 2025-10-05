@@ -12,20 +12,24 @@ const { name = "Pubudu Ranasinghe", title = "Software Engineer" } = Astro.props;
 ---
 
 <article class="container">
-  <main>
+  <main class="flex flex-col justify-center">
     <Header name={name} title={title} />
-    <section class="bio">
-      <p>
+    <section class="bio pb-20">
+      <p class="max-w-2xl">
         I am a <span>passionate engineer</span> based in the beautiful island of
         Sri Lanka. I love everything about <span>tech, building products</span> and
         experimenting with
         <span>design & photography</span>.
       </p>
-      <p>
+      <p class="max-w-2xl">
         Previously I worked at <span
-          ><a href="https://99x.io/" target="_blank" rel="noopener noreferrer"
-            >99X</a
+          ><a
+            class="underline decoration-1 underline-offset-3"
+            href="https://99x.io/"
+            target="_blank"
+            rel="noopener noreferrer">99X</a
           > & <a
+            class="underline decoration-1 underline-offset-3"
             href="https://www.itelasoft.com.au/"
             target="_blank"
             rel="noopener noreferrer">iTelaSoft</a
@@ -34,6 +38,7 @@ const { name = "Pubudu Ranasinghe", title = "Software Engineer" } = Astro.props;
         <br />
         Currently I work as a <span
           >Staff Engineer at <a
+            class="underline decoration-1 underline-offset-3"
             href="https://www.nagarro.com/en/"
             target="_blank"
             rel="noopener noreferrer">Nagarro</a
@@ -44,19 +49,3 @@ const { name = "Pubudu Ranasinghe", title = "Software Engineer" } = Astro.props;
     </section>
   </main>
 </article>
-
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .bio {
-    padding-bottom: var(--hero-padding-vertical);
-  }
-
-  .bio > p {
-    max-width: var(--max-width-content);
-  }
-</style>
