@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Libre Caslon Condensed";
+  src: url("/fonts/LibreCaslonCondensed-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/EBGaramond-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/EBGaramond-Italic.ttf") format('truetype');
+}
+
+.ligatures-on {
+  font-feature-settings: "liga" 1;
+}
+
+.ligatures-off {
+  font-feature-settings: "liga" 0;
+}
+
+.caslon {
+  font-family: "Libre Caslon Condensed", serif;
+  font-feature-settings: normal;
+}
+
+.eb-garamond {
+  font-family: 'EB Garamond', serif;
+  font-feature-settings: normal;
+}
+
+.blog-content .class-switcher__content p {
+  color: var(--color-text-primary-extra);
+  font-size: 48px;
+}
+
+.discretionary-on {
+  font-feature-settings: "dlig" 1, "hlig" 1;
+}
+
+.discretionary-off {
+  font-feature-settings: "dlig" 0, "hlig" 0;
+}
+
+.oldstyle-on {
+  font-feature-settings: "onum" 1;
+}
+
+.oldstyle-off {
+  font-feature-settings: "onum" 0;
+}
+
+.tabular-on {
+  font-feature-settings: "tnum" 1;
+}
+
+.tabular-on p {
+  text-align: right;
+}
+
+.tabular-off p {
+  text-align: right;
+}
+
+.tabular-off {
+  font-feature-settings: "tnum" 0;
+}
+
+.ordinals-on {
+  font-feature-settings: "ordn" 1, "frac" 1, "zero" 1;
+}
+
+.ordinals-off {
+  font-feature-settings: "ordn" 0, "frac" 0, "zero" 0;
+}
+
+.diagonal-fractions {
+  font-variant-numeric: diagonal-fractions;
+}
+
+.ordinal {
+  font-variant-numeric: ordinal;
+}
+
+.zero {
+  font-variant-numeric: slashed-zero;
+}
+
+.swashes-on {
+  font-feature-settings: "swsh" 1;
+}
+
+.swashes-off {
+  font-feature-settings: "swsh" 0;
+}
+
+.small-caps-on {
+  font-feature-settings: "smcp" 1;
+}
+
+.petite-caps-on {
+  font-variant: petite-caps;
+}

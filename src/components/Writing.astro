@@ -15,14 +15,14 @@ const sortedPosts = posts.sort(
 ---
 
 <section class="pb-20 container">
-  <h2 class="font-medium text-stone-700 leading-7 mb-8">Writing</h2>
+  <h2 class="font-medium text-stone-700 dark:text-amber-400 leading-7 mb-8">Writing</h2>
   <ul class="list-none p-0 m-0">
     {
       sortedPosts.map((post: BlogEntry) => (
         <li class="mb-4 last:mb-0">
           <a
             href={`/${post.slug}`}
-            class="text-stone-500 leading-7 no-underline transition duration-200 ease-in-out hover:text-stone-800"
+            class="text-stone-500 dark:text-stone-50 leading-7 no-underline transition duration-200 ease-in-out hover:text-stone-800 dark:hover:text-stone-400"
           >
             {post.data.title}
           </a>
