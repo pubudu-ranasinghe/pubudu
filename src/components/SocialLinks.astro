@@ -41,7 +41,7 @@ const socialLinks = [
 ];
 ---
 
-<nav class={`socials ${className}`} aria-label="Social media links">
+<nav class={`flex h-4 gap-4 mt-8 ${className}`} aria-label="Social media links">
   {
     socialLinks.map((link) => (
       <a
@@ -64,13 +64,3 @@ const socialLinks = [
     ))
   }
 </nav>
-
-<style>
-  .socials {
-    display: flex;
-    flex-direction: row;
-    height: 16px;
-    gap: 16px;
-    margin-top: 32px;
-  }
-</style>
