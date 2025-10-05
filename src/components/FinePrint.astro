@@ -2,49 +2,38 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="fine-print">
-  <p>
+<footer class="text-xs text-stone-500 mt-4 mb-4 leading-5 px-4">
+  <p class="mb-0!">
     About this site — Designed using <a
+      class="underline"
       href="https://figma.com"
       target="_blank"
       rel="noopener noreferrer">Figma</a
     >. Under the hood the site is built with <a
+      class="underline"
       href="https://astro.build"
       target="_blank"
       rel="noopener noreferrer">Astro</a
-    > and plain old CSS, typeset in <a
+    >, TypeScript & <a class="underline"
+      href="https://tailwindcss.com"
+      target="_blank"
+      rel="noopener noreferrer">Tailwind</a>, typeset in <a
+      class="underline"
       href="https://vercel.com/font"
       target="_blank"
       rel="noopener noreferrer">Geist Font</a
     >. It is deployed on <a
+      class="underline"
       href="https://vercel.com"
       target="_blank"
       rel="noopener noreferrer">Vercel</a
     > behind
     <a
+      class="underline"
       href="https://www.cloudflare.com"
       target="_blank"
       rel="noopener noreferrer">Cloudflare</a
     >.
   </p>
-  <p>&copy; {currentYear} Pubudu Ranasinghe</p>
+  <p class="mb-0">&copy; {currentYear} Pubudu Ranasinghe</p>
 </footer>
-
-<style>
-  .fine-print {
-    font-size: 12px;
-    color: var(--color-text-primary);
-    margin-top: 16px;
-    margin-bottom: 16px;
-    line-height: 20px;
-    padding: 0 16px;
-  }
-
-  .fine-print p {
-    margin-bottom: 0;
-  }
-
-  .fine-print p:last-child {
-    margin-bottom: 0;
-  }
-</style>

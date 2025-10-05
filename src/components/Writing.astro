@@ -9,18 +9,21 @@ const posts = await getCollection("blog", ({ data }: BlogEntry) => {
 });
 
 const sortedPosts = posts.sort(
-  (a: BlogEntry, b: BlogEntry) => 
+  (a: BlogEntry, b: BlogEntry) =>
     b.data.publishDate.getTime() - a.data.publishDate.getTime()
 );
 ---
 
-<section class="writing container">
-  <h2>Writing</h2>
-  <ul>
+<section class="pb-20 container">
+  <h2 class="font-medium text-stone-700 leading-7 mb-8">Writing</h2>
+  <ul class="list-none p-0 m-0">
     {
       sortedPosts.map((post: BlogEntry) => (
-        <li>
-          <a href={`/${post.slug}`}>
+        <li class="mb-4 last:mb-0">
+          <a
+            href={`/${post.slug}`}
+            class="text-stone-500 leading-7 no-underline transition duration-200 ease-in-out hover:text-stone-800"
+          >
             {post.data.title}
           </a>
         </li>
@@ -28,49 +31,3 @@ const sortedPosts = posts.sort(
     }
   </ul>
 </section>
-
-<style>
-  .writing {
-    padding-bottom: var(--hero-padding-vertical);
-  }
-
-  .writing h2 {
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-text-secondary);
-    line-height: var(--line-height-base);
-  }
-
-  .writing ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-width: var(--max-width-content);
-  }
-
-  .writing li {
-    margin-bottom: 16px;
-  }
-
-  .writing li:last-child {
-    margin-bottom: 0;
-  }
-
-  .writing a {
-    color: var(--color-text-primary);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-    text-decoration: none;
-    transition-duration: 0.3s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .writing a:hover {
-    color: var(--color-text-emphasis);
-  }
-
-  .writing sup {
-    font-size: 0.6em;
-    color: var(--color-text-secondary);
-  }
-</style>
