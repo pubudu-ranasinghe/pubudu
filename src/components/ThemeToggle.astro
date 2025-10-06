@@ -1,0 +1,138 @@
+---
+// Theme toggle component for manual dark mode switching
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Toggle dark mode"
+  class="fixed top-4 right-4 w-6 h-6 border-0 rounded-full cursor-pointer flex items-center justify-center transition-all duration-200 ease-in-out z-[100] hover:scale-110 active:scale-95"
+  style="background: var(--color-surface); color: var(--color-text-primary);"
+>
+  <svg
+    class="sun-icon absolute transition-all duration-200 ease-in-out opacity-0 -rotate-90"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <circle cx="12" cy="12" r="5"></circle>
+    <line x1="12" y1="1" x2="12" y2="3"></line>
+    <line x1="12" y1="21" x2="12" y2="23"></line>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+    <line x1="1" y1="12" x2="3" y2="12"></line>
+    <line x1="21" y1="12" x2="23" y2="12"></line>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+  </svg>
+  <svg
+    class="moon-icon absolute transition-all duration-200 ease-in-out opacity-100 rotate-0"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+</button>
+
+<script>
+  // Theme management - respects OS preference first, then manual override
+  const STORAGE_KEY = "theme-preference";
+
+  function getThemePreference(): "light" | "dark" | null {
+    if (typeof localStorage !== "undefined") {
+      return localStorage.getItem(STORAGE_KEY) as "light" | "dark" | null;
+    }
+    return null;
+  }
+
+  function setThemePreference(theme: "light" | "dark") {
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem(STORAGE_KEY, theme);
+    }
+  }
+
+  function getSystemTheme(): "light" | "dark" {
+    if (typeof window !== "undefined" && window.matchMedia) {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+    return "light";
+  }
+
+  function getCurrentTheme(): "light" | "dark" {
+    const stored = getThemePreference();
+    return stored || getSystemTheme();
+  }
+
+  function applyTheme(theme: "light" | "dark") {
+    const root = document.documentElement;
+    root.setAttribute("data-theme", theme);
+
+    // Update button state
+    const button = document.getElementById("theme-toggle");
+    if (button) {
+      button.setAttribute("aria-pressed", "true");
+      button.setAttribute("data-theme", theme);
+    }
+  }
+
+  function toggleTheme() {
+    const currentTheme = getCurrentTheme();
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    setThemePreference(newTheme);
+    applyTheme(newTheme);
+  }
+
+  // Initialize theme on page load
+  function initTheme() {
+    const theme = getCurrentTheme();
+    applyTheme(theme);
+
+    // Set up button click handler
+    const button = document.getElementById("theme-toggle");
+    if (button) {
+      button.addEventListener("click", toggleTheme);
+    }
+
+    // Listen for system theme changes (only if user hasn't set preference)
+    if (typeof window !== "undefined" && window.matchMedia) {
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+          const stored = getThemePreference();
+          if (!stored) {
+            applyTheme(e.matches ? "dark" : "light");
+          }
+        });
+    }
+  }
+
+  // Run on initial load and after navigation
+  initTheme();
+  document.addEventListener("astro:after-swap", initTheme);
+</script>
+
+<style>
+  /* Theme-specific icon visibility - cannot be done with Tailwind utilities */
+  #theme-toggle[data-theme="dark"] .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  #theme-toggle[data-theme="dark"] .moon-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+</style>

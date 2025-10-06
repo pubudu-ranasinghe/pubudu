@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
 
 export interface Props {
   title?: string;
@@ -55,6 +56,29 @@ const {
 
     <title>{title}</title>
 
+    <!-- Theme initialization script - runs before page render to prevent FOUC -->
+    <script is:inline>
+      (function() {
+        function getThemePreference() {
+          if (typeof localStorage !== 'undefined') {
+            return localStorage.getItem('theme-preference');
+          }
+          return null;
+        }
+        
+        function getSystemTheme() {
+          if (typeof window !== 'undefined' && window.matchMedia) {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          return 'light';
+        }
+        
+        const stored = getThemePreference();
+        const theme = stored || getSystemTheme();
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
     <!-- Structured Data (JSON-LD) -->
     {type === "website" ? (
       <script type="application/ld+json" set:html={JSON.stringify({
@@ -106,6 +130,7 @@ const {
     <script defer src="https://cloud.umami.is/script.js" data-website-id="0c8d67f9-e696-40e7-aead-d71b63c8622d"></script>
   </head>
   <body>
+    <ThemeToggle />
     <slot />
   </body>
 </html>
@@ -183,8 +208,9 @@ const {
     --border-radius-base: 8px;
   }
 
+  /* Dark theme - applied via media query OR data-theme attribute */
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
       /* Semantic Variables - Dark Theme */
       --color-bg: var(--stone-900);
       --color-surface: var(--stone-800);
@@ -194,6 +220,30 @@ const {
       --color-text-secondary: var(--accent-400);
       --color-text-emphasis: var(--stone-50);
     }
+  }
+  
+  /* Manual dark theme override */
+  :root[data-theme="dark"] {
+    /* Semantic Variables - Dark Theme */
+    --color-bg: var(--stone-900);
+    --color-surface: var(--stone-800);
+    --color-border: var(--stone-700);
+    --color-text-primary: var(--stone-50);
+    --color-text-primary-extra: var(--stone-50);
+    --color-text-secondary: var(--accent-400);
+    --color-text-emphasis: var(--stone-50);
+  }
+  
+  /* Manual light theme override */
+  :root[data-theme="light"] {
+    /* Semantic Variables - Light Theme (same as default) */
+    --color-bg: var(--stone-50);
+    --color-surface: var(--stone-100);
+    --color-border: var(--stone-200);
+    --color-text-primary: var(--stone-500);
+    --color-text-primary-extra: var(--stone-900);
+    --color-text-secondary: var(--stone-700);
+    --color-text-emphasis: var(--stone-800);
   }
 
   /* .container {
