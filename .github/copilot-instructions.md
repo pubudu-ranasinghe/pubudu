@@ -5,6 +5,7 @@ This is a personal portfolio site for Pubudu Ranasinghe, built with Astro 5.11 a
 ## Architecture
 
 **Single-page static site** — All content is rendered from `src/pages/index.astro`, which composes modular components:
+
 - `Intro.astro` — Hero section with name, title, bio, and social links
 - `Writing.astro` — Writing/blog section that dynamically fetches posts from content collection
 - `BackgroundImage.astro` — Full-width image with noise overlay effect
@@ -19,6 +20,7 @@ This is a personal portfolio site for Pubudu Ranasinghe, built with Astro 5.11 a
 ## Design System
 
 **CSS Custom Properties in `Layout.astro`** — All design tokens are centralized in `:root`:
+
 - Typography: `--font-size-base` (16px), `--line-height-base` (28px), `--font-weight-base/medium`, `--letter-spacing-base`
 - Color Palette: Stone scale (`--stone-50` through `--stone-950`), `--accent-400`, `--gray-900` in OKLCH format for perceptual uniformity
 - Semantic Colors: `--color-bg`, `--color-surface`, `--color-border`, `--color-text-primary`, `--color-text-secondary`, `--color-text-emphasis` (automatically switch between palette colors for light/dark themes)
@@ -31,7 +33,8 @@ This is a personal portfolio site for Pubudu Ranasinghe, built with Astro 5.11 a
 ## Component Patterns
 
 **TypeScript interfaces for props** — Every component exports a `Props` interface with default values destructured:
-```astro
+
+```ts
 export interface Props {
   title?: string;
 }
@@ -47,6 +50,7 @@ const { title = "Default" } = Astro.props;
 ## Development Workflow
 
 **Commands** (npm):
+
 - `npm run dev` — Dev server at localhost:4321
 - `npm run build` — Static build to `./dist/`
 - `npm run preview` — Preview production build locally

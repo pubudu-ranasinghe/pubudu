@@ -12,38 +12,39 @@ const { name = "Pubudu Ranasinghe", title = "Software Engineer" } = Astro.props;
 ---
 
 <article class="container">
-  <main class="flex flex-col justify-center">
+  <main class="ligatures flex flex-col justify-center">
     <Header name={name} title={title} />
     <section class="bio pb-20">
       <p class="max-w-2xl">
-        I am a <span>passionate engineer</span> based in the beautiful island of
-        Sri Lanka. I love everything about <span>tech, building products</span> and
-        experimenting with
-        <span>design & photography</span>.
+        I am a <span class="text-stone-700">passionate engineer</span> based in the
+        beautiful island of Sri Lanka. I love everything about <span
+          class="text-stone-700">tech, building products</span
+        > and experimenting with
+        <span class="text-stone-700">design & photography</span>.
       </p>
       <p class="max-w-2xl">
-        Previously I worked at <span
+        Previously I worked at <span class="text-stone-700"
           ><a
-            class="underline decoration-1 underline-offset-3 hover:text-amber-400 transition-colors"
+            class="underline decoration-1 underline-offset-3 transition-colors hover:text-amber-400"
             href="https://99x.io/"
             target="_blank"
             rel="noopener noreferrer">99X</a
           > & <a
-            class="underline decoration-1 underline-offset-3 hover:text-amber-400 transition-colors"
+            class="underline decoration-1 underline-offset-3 transition-colors hover:text-amber-400"
             href="https://www.itelasoft.com.au/"
             target="_blank"
             rel="noopener noreferrer">iTelaSoft</a
           ></span
         >.
         <br />
-        Currently I work as a <span
+        Currently I work as a <span class="text-stone-700"
           >Staff Engineer at <a
-            class="underline decoration-1 underline-offset-3 hover:text-amber-400 transition-colors"
+            class="underline decoration-1 underline-offset-3 transition-colors hover:text-amber-400"
             href="https://www.nagarro.com/en/"
             target="_blank"
             rel="noopener noreferrer">Nagarro</a
           ></span
-        > and co-founder of <span>Trizen Labs</span>.
+        > and co-founder of <span class="text-stone-700">Trizen Labs</span>.
       </p>
       <SocialLinks />
     </section>

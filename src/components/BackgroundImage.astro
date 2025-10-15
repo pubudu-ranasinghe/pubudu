@@ -9,17 +9,17 @@ export interface Props {
 const { imageAlt = "Just a background image" } = Astro.props;
 ---
 
-<aside class="overflow-hidden relative" style="height: var(--image-height)">
+<aside class="relative overflow-hidden" style="height: var(--image-height)">
   <Image
     src={background}
     alt={imageAlt}
     loading="eager"
     decoding="sync"
     quality={95}
-    class="w-full h-full object-cover object-[50%_30%]"
+    class="h-full w-full object-cover object-[50%_30%]"
   />
   <div
-    class="absolute inset-0 w-full h-full mix-blend-screen opacity-40 noise-overlay"
+    class="noise-overlay absolute inset-0 h-full w-full opacity-40 mix-blend-screen"
   >
   </div>
 </aside>

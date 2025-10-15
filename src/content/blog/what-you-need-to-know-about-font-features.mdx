@@ -6,14 +6,13 @@ draft: false
 tags: ["css", "typography", "webdesign"]
 ---
 
-import Tabs from '../../components/Tabs.astro';
+import Tabs from "../../components/Tabs.astro";
 
-import './styles/fonts.css'
+import "./styles/fonts.css";
 
 Did you know that OpenType fonts come with a bunch of features that can make the text look better and easier to read? These features were often hidden away in complex design/typesetting software, so most designers and developers weren’t aware of them.
 
 Now, with modern webfonts and improved browser support, you can just turn these on with a bit of CSS.
-
 
 {/* > OpenType features are like secret compartments in fonts. Unlock them and you'll find ways to make fonts look and behave differently in subtle and dramatic ways. Not all OpenType features are appropriate to use all of the time, but some features are critical for great typography.<span> Tim Brown, Head of Typography at Adobe.</span> */}
 
@@ -21,181 +20,157 @@ Now, with modern webfonts and improved browser support, you can just turn these 
 
 Ligatures occur when two or more characters are joined together to form a single glyph. For instance when the letters "f" and "i" are next to each other the hood of the "f" can collide with the dot of the "i". A ligature can replace this with a combination that is designed to look better. Often these are enabled by default in most fonts.
 
-<Tabs tabs={[
-    { id: 'tab1', label: 'Ligatures On' },
-    { id: 'tab2', label: 'Ligatures Off' },
-  ]}>
-  <div slot="tab1" class="eb-garamond ligatures-on text-2xl md:text-4xl">Offline ff fi fl ffi ffl</div>
-  <div slot="code1">
-  ```css
-  font-variant-ligatures: common-ligatures;
-  ```
+<Tabs
+  tabs={[
+    { id: "tab1", label: "Ligatures On" },
+    { id: "tab2", label: "Ligatures Off" },
+  ]}
+>
+  <div slot="tab1" class="eb-garamond ligatures-on text-2xl md:text-4xl">
+    Offline ff fi fl ffi ffl
   </div>
-  <div slot="tab2" class="eb-garamond ligatures-off text-2xl md:text-4xl">Offline ff fi fl ffi ffl</div>
-  <div slot="code2">
-  ```css
-  font-variant-ligatures: none;
-  ```
+  <div slot="code1">```css font-variant-ligatures: common-ligatures; ```</div>
+  <div slot="tab2" class="eb-garamond ligatures-off text-2xl md:text-4xl">
+    Offline ff fi fl ffi ffl
   </div>
+  <div slot="code2">```css font-variant-ligatures: none; ```</div>
 </Tabs>
 
 ### Discretionary Ligatures
 
 Discretionary ligatures are to be used at the discretion of the designer. Most of the time they are more decorative and not essential for readability.
 
-<Tabs tabs={[
-    { id: 'tab1', label: 'Discretionary On' },
-    { id: 'tab2', label: 'Discretionary Off' },
-  ]}>
-  <div slot="tab1" class="eb-garamond discretionary-on text-2xl md:text-4xl">Connecting ct sp st</div>
+<Tabs
+  tabs={[
+    { id: "tab1", label: "Discretionary On" },
+    { id: "tab2", label: "Discretionary Off" },
+  ]}
+>
+  <div slot="tab1" class="eb-garamond discretionary-on text-2xl md:text-4xl">
+    Connecting ct sp st
+  </div>
   <div slot="code1">
-  ```css
-  font-variant-ligatures: discretionary-ligatures;
-  ```
+    ```css font-variant-ligatures: discretionary-ligatures; ```
   </div>
-  <div slot="tab2" class="eb-garamond discretionary-off text-2xl md:text-4xl">Connecting ct sp st</div>
-  <div slot="code2">
-  ```css
-  font-variant-ligatures: none;
-  ```
+  <div slot="tab2" class="eb-garamond discretionary-off text-2xl md:text-4xl">
+    Connecting ct sp st
   </div>
+  <div slot="code2">```css font-variant-ligatures: none; ```</div>
 </Tabs>
 
 ### Old Style Figures
 
 Old style numbers have varying heights and alignments to make them blend in better with lower case letters. These are designed to be used inline with a body of text.
 
-<Tabs tabs={[
-    { id: 'tab1', label: 'Old Style On' },
-    { id: 'tab2', label: 'Old Style Off' },
-  ]}>
-  <div slot="tab1" class="eb-garamond oldstyle-on text-2xl md:text-4xl">52 apples and 7 bananas</div>
-  <div slot="code1">
-  ```css
-  font-variant-numeric: oldstyle-nums;
-  ```
+<Tabs
+  tabs={[
+    { id: "tab1", label: "Old Style On" },
+    { id: "tab2", label: "Old Style Off" },
+  ]}
+>
+  <div slot="tab1" class="eb-garamond oldstyle-on text-2xl md:text-4xl">
+    52 apples and 7 bananas
   </div>
-  <div slot="tab2" class="eb-garamond oldstyle-off text-2xl md:text-4xl">52 apples and 7 bananas</div>
-  <div slot="code2">
-  ```css
-  font-variant-numeric: lining-nums;
-  ```
+  <div slot="code1">```css font-variant-numeric: oldstyle-nums; ```</div>
+  <div slot="tab2" class="eb-garamond oldstyle-off text-2xl md:text-4xl">
+    52 apples and 7 bananas
   </div>
+  <div slot="code2">```css font-variant-numeric: lining-nums; ```</div>
 </Tabs>
 
 ### Tabular Figures
 
 Tabular figures, as the name implies, are designed to align better in tables. They all have the same width so that they line up nicely in columns.
 
-<Tabs tabs={[
-    { id: 'tab1', label: 'Tabular On' },
-    { id: 'tab2', label: 'Tabular Off' },
-  ]}>
-  <div slot="tab1" class="caslon text-right tabular-on text-2xl md:text-4xl">
-    25
-
-    345
-
+<Tabs
+  tabs={[
+    { id: "tab1", label: "Tabular On" },
+    { id: "tab2", label: "Tabular Off" },
+  ]}
+>
+  <div slot="tab1" class="caslon tabular-on text-right text-2xl md:text-4xl">
+    25 <br />
+    345 <br />
     2342
   </div>
-  <div slot="code1">
-  ```css
-  font-variant-numeric: tabular-nums;
-  ```
-  </div>
+  <div slot="code1">```css font-variant-numeric: tabular-nums; ```</div>
   <div slot="tab2" class="caslon tabular-off text-2xl md:text-4xl">
-    25
-
-    345
-
+    25 <br />
+    345 <br />
     2342
   </div>
-  <div slot="code2">
-  ```css
-  font-variant-numeric: lining-nums;
-  ```
-  </div>
+  <div slot="code2">```css font-variant-numeric: lining-nums; ```</div>
 </Tabs>
 
 ### Ordinals, Fractions and Slashed Zero
 
 These features are useful when displaying number values. Ordinals format the letters in "1st", "2nd", "3rd" to be smaller and raised. Fractions turn "1/2" into a proper fraction glyph.
 
-<Tabs tabs={[
-    { id: 'tab1', label: 'On' },
-    { id: 'tab2', label: 'Off' },
-  ]}>
+<Tabs
+  tabs={[
+    { id: "tab1", label: "On" },
+    { id: "tab2", label: "Off" },
+  ]}
+>
   <div slot="tab1" class="eb-garamond text-2xl md:text-4xl">
-    &numero; 9 <span className='diagonal-fractions'>3/4</span> between 9<span className='ordinal'>th</span> and <span className='zero'>10</span><span className='ordinal'>th</span>
+    &numero; 9 <span className="diagonal-fractions">3/4</span> between 9
+    <span className="ordinal">th</span> and <span className="zero">10</span>
+    <span className="ordinal">th</span>
   </div>
-  <div slot="code1">
-  ```css
-  font-feature-settings: "frac" 1, "ordn" 1;
-  ```
-  </div>
+  <div slot="code1">```css font-feature-settings: "frac" 1, "ordn" 1; ```</div>
   <div slot="tab2" class="eb-garamond text-2xl md:text-4xl">
     &numero; 9 3/4 between 9th and 10th
   </div>
-  <div slot="code2">
-  ```css
-  font-feature-settings: "frac" 0, "ordn" 0;
-  ```
-  </div>
+  <div slot="code2">```css font-feature-settings: "frac" 0, "ordn" 0; ```</div>
 </Tabs>
 
 ### Swashes
 
 Swashes are decorative pieces often used on start of paragraphs or headings. You may have noticed these on the start paragraphs in books or magazines.
 
-<Tabs tabs={[
-    { id: 'tab1', label: 'Swashes On' },
-    { id: 'tab2', label: 'Swashes Off' },
-  ]}>
-  <div slot="tab1" class="eb-garamond italic swashes-on text-2xl md:text-4xl">Queen Elizabeth</div>
-  <div slot="code1">
-  ```css
-  font-feature-settings: "swsh" 1;
-  ```
+<Tabs
+  tabs={[
+    { id: "tab1", label: "Swashes On" },
+    { id: "tab2", label: "Swashes Off" },
+  ]}
+>
+  <div slot="tab1" class="eb-garamond swashes-on text-2xl italic md:text-4xl">
+    Queen Elizabeth
   </div>
-  <div slot="tab2" class="eb-garamond italic swashes-off text-2xl md:text-4xl">Queen Elizabeth</div>
-  <div slot="code2">
-  ```css
-  font-feature-settings: "swsh" 0;
-  ```
+  <div slot="code1">```css font-feature-settings: "swsh" 1; ```</div>
+  <div slot="tab2" class="eb-garamond swashes-off text-2xl italic md:text-4xl">
+    Queen Elizabeth
   </div>
-  </Tabs>
+  <div slot="code2">```css font-feature-settings: "swsh" 0; ```</div>
+</Tabs>
 
 ### Small Caps/Petite Caps
 
 Small caps are uppercase letters that are the same height as lowercase letters. These are often used for acronyms or at the start of paragraphs. Some fonts also come with petite caps which are even smaller than small caps.
 
-<Tabs tabs={[
-    { id: 'tab1', label: 'Normal Text' },
-    { id: 'tab2', label: 'Small Caps' },
-    { id: 'tab3', label: 'Petite Caps' },
-  ]}>
-  <div slot="tab1" class="eb-garamond text-2xl md:text-4xl">Sir Issac Newton</div>
-  <div slot="code1">
-  ```css
-  font-variant-caps: normal;
-  ```
+<Tabs
+  tabs={[
+    { id: "tab1", label: "Normal Text" },
+    { id: "tab2", label: "Small Caps" },
+    { id: "tab3", label: "Petite Caps" },
+  ]}
+>
+  <div slot="tab1" class="eb-garamond text-2xl md:text-4xl">
+    Sir Issac Newton
   </div>
-  <div slot="tab2" class="eb-garamond small-caps-on text-2xl md:text-4xl">Sir Issac Newton</div>
-  <div slot="code2">
-  ```css
-  font-variant-caps: small-caps;
-  ```
+  <div slot="code1">```css font-variant-caps: normal; ```</div>
+  <div slot="tab2" class="eb-garamond small-caps-on text-2xl md:text-4xl">
+    Sir Issac Newton
   </div>
-  <div slot="tab3" class="eb-garamond petite-caps-on text-2xl md:text-4xl">Sir Issac Newton</div>
-  <div slot="code3">
-  ```css
-  font-variant-caps: petite-caps;
-  ```
+  <div slot="code2">```css font-variant-caps: small-caps; ```</div>
+  <div slot="tab3" class="eb-garamond petite-caps-on text-2xl md:text-4xl">
+    Sir Issac Newton
   </div>
-  </Tabs>
+  <div slot="code3">```css font-variant-caps: petite-caps; ```</div>
+</Tabs>
 
-This is only a few of the many font features available in OpenType fonts. Depending on the font you are using, the possibilities are endless. So next time you are working with text on the web, spend some time learning your font and see what features it has to offer. You can find the features supported by your font at [wakamaifondue](https://wakamaifondue.com/) and checkout an [exhaustive list of CSS font features.](https://sparanoid.com/lab/opentype-features/)
+This is only a few of the many font features available in OpenType fonts. Depending on the font you are using, the possibilities are endless. So next time you are working with text on the web, spend some time learning your font and see what features it has to offer. You can find the features supported by your font at [wakamaifondue](https://wakamaifondue.com/) and checkout an [exhaustive list of CSS font features here.](https://sparanoid.com/lab/opentype-features/)
 
-<div class="eb-garamond mt-20 text-center text-stone-500 text-xl md:text-2xl">
+<div class="eb-garamond mt-20 text-center text-xl text-stone-500 md:text-2xl">
   -- ◇ --
 </div>

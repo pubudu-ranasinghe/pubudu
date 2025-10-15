@@ -7,19 +7,19 @@
 }
 
 @font-face {
-  font-family: 'EB Garamond';
+  font-family: "EB Garamond";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/EBGaramond-Regular.ttf") format('truetype');
+  src: url("/fonts/EBGaramond-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'EB Garamond';
+  font-family: "EB Garamond";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/EBGaramond-Italic.ttf") format('truetype');
+  src: url("/fonts/EBGaramond-Italic.ttf") format("truetype");
 }
 
 .ligatures-on {
@@ -36,8 +36,7 @@
 }
 
 .eb-garamond {
-  font-family: 'EB Garamond', serif;
-  font-feature-settings: normal;
+  font-family: "EB Garamond", serif;
 }
 
 .blog-content .class-switcher__content p {
@@ -46,11 +45,15 @@
 }
 
 .discretionary-on {
-  font-feature-settings: "dlig" 1, "hlig" 1;
+  font-feature-settings:
+    "dlig" 1,
+    "hlig" 1;
 }
 
 .discretionary-off {
-  font-feature-settings: "dlig" 0, "hlig" 0;
+  font-feature-settings:
+    "dlig" 0,
+    "hlig" 0;
 }
 
 .oldstyle-on {
@@ -78,11 +81,17 @@
 }
 
 .ordinals-on {
-  font-feature-settings: "ordn" 1, "frac" 1, "zero" 1;
+  font-feature-settings:
+    "ordn" 1,
+    "frac" 1,
+    "zero" 1;
 }
 
 .ordinals-off {
-  font-feature-settings: "ordn" 0, "frac" 0, "zero" 0;
+  font-feature-settings:
+    "ordn" 0,
+    "frac" 0,
+    "zero" 0;
 }
 
 .diagonal-fractions {

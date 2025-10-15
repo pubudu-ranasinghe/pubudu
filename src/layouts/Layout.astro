@@ -40,12 +40,17 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
-    {type === "article" && publishDate && (
-      <>
-        <meta property="article:published_time" content={publishDate.toISOString()} />
-        <meta property="article:author" content={author} />
-      </>
-    )}
+    {
+      type === "article" && publishDate && (
+        <>
+          <meta
+            property="article:published_time"
+            content={publishDate.toISOString()}
+          />
+          <meta property="article:author" content={author} />
+        </>
+      )
+    }
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -58,76 +63,89 @@ const {
 
     <!-- Theme initialization script - runs before page render to prevent FOUC -->
     <script is:inline>
-      (function() {
+      (function () {
         function getThemePreference() {
-          if (typeof localStorage !== 'undefined') {
-            return localStorage.getItem('theme-preference');
+          if (typeof localStorage !== "undefined") {
+            return localStorage.getItem("theme-preference");
           }
           return null;
         }
-        
+
         function getSystemTheme() {
-          if (typeof window !== 'undefined' && window.matchMedia) {
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          if (typeof window !== "undefined" && window.matchMedia) {
+            return window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
           }
-          return 'light';
+          return "light";
         }
-        
+
         const stored = getThemePreference();
         const theme = stored || getSystemTheme();
-        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute("data-theme", theme);
       })();
     </script>
 
     <!-- Structured Data (JSON-LD) -->
-    {type === "website" ? (
-      <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Pubudu Ranasinghe",
-        "jobTitle": "Software Engineer",
-        "url": Astro.site?.href,
-        "sameAs": [
-          "https://github.com/pubudu-ranasinghe",
-          "https://www.linkedin.com/in/pubuduranasinghe/",
-          "https://www.facebook.com/pubudutr",
-          "https://www.instagram.com/pubudu_ranasinghe/"
-        ],
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Nagarro"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "LK",
-          "addressLocality": "Sri Lanka"
-        }
-      })} />
-    ) : (
-      <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": title,
-        "description": description,
-        "image": image,
-        "datePublished": publishDate?.toISOString(),
-        "author": {
-          "@type": "Person",
-          "name": author,
-          "url": Astro.site?.href
-        },
-        "publisher": {
-          "@type": "Person",
-          "name": "Pubudu Ranasinghe"
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": Astro.url.href
-        }
-      })} />
-    )}
+    {
+      type === "website" ? (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Pubudu Ranasinghe",
+            jobTitle: "Software Engineer",
+            url: Astro.site?.href,
+            sameAs: [
+              "https://github.com/pubudu-ranasinghe",
+              "https://www.linkedin.com/in/pubuduranasinghe/",
+              "https://www.facebook.com/pubudutr",
+              "https://www.instagram.com/pubudu_ranasinghe/",
+            ],
+            worksFor: {
+              "@type": "Organization",
+              name: "Nagarro",
+            },
+            address: {
+              "@type": "PostalAddress",
+              addressCountry: "LK",
+              addressLocality: "Sri Lanka",
+            },
+          })}
+        />
+      ) : (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: title,
+            description: description,
+            image: image,
+            datePublished: publishDate?.toISOString(),
+            author: {
+              "@type": "Person",
+              name: author,
+              url: Astro.site?.href,
+            },
+            publisher: {
+              "@type": "Person",
+              name: "Pubudu Ranasinghe",
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": Astro.url.href,
+            },
+          })}
+        />
+      )
+    }
 
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="0c8d67f9-e696-40e7-aead-d71b63c8622d"></script>
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="0c8d67f9-e696-40e7-aead-d71b63c8622d"></script>
   </head>
   <body>
     <ThemeToggle />
@@ -141,16 +159,9 @@ const {
     margin: 0;
     width: 100%;
     min-height: 100%;
-    font-family: "Geist Sans", Inter, Roboto, "Helvetica Neue", "Arial Nova",
+    font-family:
+      "Geist Sans", Inter, Roboto, "Helvetica Neue", "Arial Nova",
       "Nimbus Sans", Arial, sans-serif;
-    font-variant-ligatures: common-ligatures;
-    font-feature-settings:
-      "ss01" 1,
-      "ss04" 1,
-      "ss05" 1,
-      "ss06" 1,
-      "ss07" 1,
-      "ss08" 1;
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-base);
     line-height: var(--line-height-base);
@@ -221,7 +232,7 @@ const {
       --color-text-emphasis: var(--stone-50);
     }
   }
-  
+
   /* Manual dark theme override */
   :root[data-theme="dark"] {
     /* Semantic Variables - Dark Theme */
@@ -233,7 +244,7 @@ const {
     --color-text-secondary: var(--accent-400);
     --color-text-emphasis: var(--stone-50);
   }
-  
+
   /* Manual light theme override */
   :root[data-theme="light"] {
     /* Semantic Variables - Light Theme (same as default) */
@@ -257,10 +268,14 @@ const {
     margin: 0 0 16px 0;
   }
 
-  p > span {
-    color: var(--color-text-emphasis);
+  .ligatures {
+    font-variant-ligatures: common-ligatures;
+    font-feature-settings:
+      "ss01" 1,
+      "ss04" 1,
+      "ss05" 1,
+      "ss06" 1,
+      "ss07" 1,
+      "ss08" 1;
   }
-
-
-  
 </style>

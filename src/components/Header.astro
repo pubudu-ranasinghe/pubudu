@@ -14,10 +14,12 @@ const {
 } = Astro.props;
 ---
 
-<header class="flex flex-col justify-center items-start gap-4 pb-12 pt-20">
+<header class="flex flex-col items-start justify-center gap-4 pt-20 pb-12">
   {!compact && <Logo height={25} />}
-  <h1 class="text-base font-medium text-stone-700 dark:text-amber-400 leading-7">
+  <h1
+    class="text-base leading-7 font-medium text-stone-700 dark:text-amber-400"
+  >
     <a class="no-underline" href="/">{name}</a>
-    <div class="text-stone-500 font-normal">{title}</div>
+    <div class="font-normal text-stone-500">{title}</div>
   </h1>
 </header>
