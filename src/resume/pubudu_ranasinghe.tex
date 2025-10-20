@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -47,8 +47,8 @@
 % \usepackage{fontspec}
 % \defaultfontfeatures{Ligatures=TeX}
 
-% Set Geist Sans as the main font
-% \setmainfont{Fira Code}
+% Change the main font
+% \setmainfont{EB Garamond}
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
@@ -60,7 +60,8 @@
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
+% \usepackage[scale=0.9]{geometry}
+\usepackage[top=0.25in, bottom=0.25in, left=0.4in, right=0.4in]{geometry}
 
 %tabularx environment
 \usepackage{tabularx}
@@ -84,18 +85,18 @@
 
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{8pt}{6pt}
 
 %for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+% \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\definecolor{linkcolour}{rgb}{0.98416, 0.57368, -0.05887}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
+% \addbibresource{citations.bib}
+% \setlength\bibitemsep{1em}
 
 %for social icons
 \usepackage{fontawesome5}
@@ -148,11 +149,12 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Pubudu Ranasinghe} \\[7.5pt]
+\Huge{Pubudu Ranasinghe} \\[5pt]
 \href{https://github.com/pubudu-ranasinghe}{\raisebox{-0.05\height}\faGithub\ pubudu-ranasinghe} \ $|$ \ 
 \href{https://www.linkedin.com/in/pubuduranasinghe/}{\raisebox{-0.05\height}\faLinkedin\ pubuduranasinghe} \ $|$ \ 
 \href{https://pubuduranasinghe.com}{\raisebox{-0.05\height}\faGlobe \ pubuduranasinghe.com} \ $|$ \ 
 \href{mailto:pubudutr@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ pubudutr@gmail.com} \ $|$ \ 
+\textcolor{linkcolour}{\raisebox{-0.05\height}\faMap\ Colombo, Sri Lanka} \ $|$ \ 
 \href{tel:+94 712 955 290}{\raisebox{-0.05\height}\faPhone \ +94 712 955 290} \\
 \end{tabularx}
 
@@ -161,28 +163,100 @@
 %----------------------------------------------------------------------------------------
 
 %Interests/ Keywords/ Summary
-\section{Summary}
-I am a passionate engineer based in the beautiful island of Sri Lanka. I love programming, building products and experimenting with design and photography.
+\section{Associate Staff Engineer}
+Associate Staff Engineer with 8+ years architecting web applications across diverse industries—from automotive SaaS, fintech to supply chain platforms. Technical leader experienced in guiding teams of 3-8 engineers and mentoring 12+ developers, with a track record of delivering transformative solutions including Sri Lanka's first blockchain SaaS and Telco Automation Systems. Expert in frontend architecture (React, Next.js) and full-stack development (Node.js, .NET Core).
+
+% Full-stack engineer and technical leader with 8+ years building scalable systems across blockchain, fintech, telco, and automotive. Proven track record leading teams of 8+, architecting solutions with React, Next.js, Node.js, and .NET Core. Passionate about shipping products that scale.
+
+% Software engineer with 8+ years spanning startups to enterprises in blockchain, fintech, telco, and automotive sectors. Expert in full-stack development (React, Next.js, Node.js, .NET Core) and technical leadership of cross-functional teams. Focused on building scalable, production-ready systems.
+
+% 8+ years of full-stack engineering experience across diverse industries—blockchain, fintech, telco, and automotive. Technical leader comfortable building and scaling teams of 8+. Proficient in modern frontend (React, Next.js) and backend technologies (Node.js, .NET Core) with a focus on architecture and mentorship.
+
+% Full-stack engineer and technical leader with 8+ years building scalable systems in blockchain, fintech, telco, and automotive. Led teams of 8+. Expert in React, Next.js, Node.js, and .NET Core with a passion for great engineering and mentoring.
+
+% Software engineer and technical leader with 8+ years transforming ideas into scalable systems across blockchain, fintech, telco, and automotive. Lead teams of 8+ engineers. Full-stack specialist (React, Next.js, Node.js, .NET Core) committed to building products and teams that matter.
+
+% Associate Staff Engineer with 8+ years architecting scalable web applications from blockchain SaaS platforms to automotive dealership systems. Led teams of 3-8 engineers and mentored 12+ junior developers while delivering high-impact solutions—including Sri Lanka's first blockchain SaaS and automated testing systems for telecom operators. Expert in modern frontend architectures (React, Next.js) and full-stack development (Node.js, .NET Core).
+
+% 8+ years architecting scalable web applications across automotive, supply chain, and fintech domains. Technical leader who has mentored 12+ developers and delivered transformative solutions—from Sri Lanka's first blockchain SaaS to telecom test automation. Expert in modern frontend development (React, Next.js) and distributed systems (Node.js, .NET Core).
+
+% Software architect and technical leader specializing in frontend architecture and scalable system design. 8+ years delivering mission-critical applications for automotive dealerships, supply chain networks, and emerging technologies. Led engineering teams of 3-8 members, mentored 12+ junior developers, and pioneered innovations including blockchain SaaS platforms and telecom automation systems. Deep expertise in React, Next.js, Node.js, and .NET Core.
+
+% Associate Staff Engineer with 8+ years architecting web applications across diverse industries—from automotive dealerships to supply chain platforms. Technical leader experienced in guiding teams of 3-8 engineers and mentoring 12+ developers, with a track record of delivering transformative solutions including Sri Lanka's first blockchain SaaS and automated telco testing systems. Expert in frontend architecture (React, Next.js) and full-stack development (Node.js, .NET Core).
+
+% Full‑stack Lead with 8+ years building and scaling web platforms across startups and enterprises. Leads squads and sets architecture for React/Next.js (NextJs) frontends and Node.js/.NET Core microservices on AWS; delivered Sri Lanka’s first blockchain SaaS and automated telco testing systems.
+
+% Hands‑on technical leader across React/Next.js frontends and Node.js/.NET Core microservices on AWS. 8+ years in startup and enterprise settings, scaling systems and coaching developers to deliver consistently.
+
+% Senior full‑stack lead focused on architecture, performance, and reliability. 8+ years building React/Next.js UIs and Node.js/.NET Core microservices on AWS across diverse domains from supply chain to automotive.
+
+% Results‑driven Associate Staff Engineer with 8+ years across greenfield and modernization. Leads React/Next.js, AWS, microservices initiatives; mentored 12+ developers and drove measurable gains in delivery speed and quality.
+
+% Full‑stack technical lead focused on scalable microservices and modern frontends. 8+ years with React, Next.js (NextJs), Node.js, .NET Core, AWS; delivered first‑of‑its‑kind blockchain SaaS in Sri Lanka.
+
+% Engineering leader who ships. 8+ years across startup→enterprise; React/Next.js frontends, Node.js/.NET Core microservices on AWS; elevates teams, sets standards, and lands impact features reliably.
+
 
 %Experience
 \section{Work Experience}
 
-\begin{jobshort}{Associate Staff Engineer}{Apr 2023 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
+\begin{joblong}{Nagarro — Associate Staff Engineer}{Apr 2023 - present}
+\item Led modernization of legacy monolith UIs to StencilJS microfrontends, significantly improving performance \& UX.
+\item Championed adoption of the in-house design system built with TailwindCSS across applications and pioneered AI integration in frontend workflows, setting architectural patterns and training engineering teams.
+\item Orchestrated migration from proprietary deployment systems to Terraform and GitHub Actions, enhancing developer velocity and reproducibility by cutting deployment times by 30\% and saving costs.
+\end{joblong}
+
+
+\begin{joblong}{Nagarro — Senior Software Engineer}{Sep 2021 - Apr 2023}
+\item Built a scalable vehicle search platform handling millions of records, improving customer engagement metrics.
+\item Implemented SRE practices and support processes ensuring high availability and reliability.
+\item Migrated legacy ExtJs frontends to StencilJS with SCSS and modern frontend tooling, automated testing, enhancing performance and maintainability.
+\item Mentored junior developers, owned technical estimation and project planning, and served as frontend subject matter expert.
+\end{joblong}
+
+\begin{jobshort}{Senior Software Engineer — iTelaSoft}{Oct 2020 - Sep 2021}
+Engineered scalable full-stack solutions for Telco, Fintech, and Energy sectors using React, Vue, and .NET Core; collaborated with architects on system design and established coding standards while mentoring junior developers.
 \end{jobshort}
 
+\begin{jobshort}{Software Engineer — iTelaSoft}{Oct 2018 - Oct 2020}
+Built serverless microservices with React frontends and .NET Core backends on AWS Lambda, leveraging DynamoDB for data persistence; collaborated with stakeholders on system design and drove product development from requirements through delivery.
+\end{jobshort}
 
-\begin{joblong}{Senior Software Engineer}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
+\begin{jobshort}{Trainee/Associate Engineer — 99X Technology}{May 2017 - Sep 2018}
+Built Sri Lanka's first blockchain SaaS platform for supply chain traceability using Angular, Node.js, Ionic, and IBM Hyperledger.
+\end{jobshort}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Languages &  \normalsize{JavaScript, TypeScript, C\#, Python}\\
+Frameworks  &  \normalsize{React, Next.js, Angular, Vue, Astro, Svelte, Stencil, Node.js, Jest, .NET Core, Serverless, React Native}\\
+Tools \& Platforms &  \normalsize{AWS, Docker, Terraform, New Relic, Copilot}\\
+Databases &  \normalsize{PostgreSQL, MySQL, MongoDB, DynamoDB, Open Search}\\
+Architecture &  \normalsize{System Design, Microservices, Microfrontends, Cloud Architecture, Clean Code}\\
+\end{tabularx}
   
 %Projects
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
+\textbf{Some Project} & \hfill \href{https://some-links.com}{Link to Demo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS & CERTIFICATES
+%----------------------------------------------------------------------------------------
+\section{Awards And Certificates}
+
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{AWS Certified Solutions Architect – Associate} & \hfill Amazon Web Services — 2024 \\
+\textbf{Gold Award} in Retail and Supply Chain Management for Tracified & \hfill National Best Quality Software Awards — 2017 \\
+\textbf{Winner} of BeThem Challenge & \hfill 99X Technology — 2016 \\
+\textbf{Winner} of Social Hackathon for the project Voices & \hfill Code4Good — 2015 \\
+% \textbf{2nd Runner Up} in HackaniX hackathon for nithiya.lk & \hfill AIESEC — 2015 \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -190,34 +264,27 @@ long long line of blah blah that will wrap when the table fills the column width
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
+2015 - 2018 & BSc (Hons) In Computer Science at University College Dublin, Ireland \hfill GPA: 3.25/4.0 \\ 
 
-2022 & Class 12th Some Board \hfill  (Grades) \\
+2013 & GCE A/L Mathematics Stream at Ananda College \hfill 1B 2S \\
 
-2021 & Class 10th Some Board \hfill  (Grades) \\
+2010 & GCE O/L at Ananda College \hfill 8A 1B \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS
 %----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
+% \section{Publications}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
 
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
-\end{tabularx}
 
-\vfill
-\center{\footnotesize Last updated: \today}
+
+
+% \vfill
+% \center{\scriptsize Last updated: \today}
 
 \end{document}
