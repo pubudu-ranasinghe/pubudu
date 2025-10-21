@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  prevPost?: CollectionEntry<"blog"> | null;
+  nextPost?: CollectionEntry<"blog"> | null;
+}
+
+const { prevPost, nextPost } = Astro.props;
+---
+
+{
+  (prevPost || nextPost) && (
+    <nav class="mt-16" aria-label="Post navigation">
+      <div class="my-4 flex items-center py-4">
+        <div class="flex-grow border-t border-stone-200 dark:border-stone-700" />
+        <span class="px-4 text-stone-400 dark:text-stone-500">◇</span>
+        <div class="flex-grow border-t border-stone-200 dark:border-stone-700" />
+      </div>
+      <div class="grid grid-cols-2 gap-6">
+        {prevPost ? (
+          <a
+            href={`/${prevPost.slug}`}
+            class="flex flex-col gap-2 rounded-lg no-underline transition-all duration-200"
+            rel="prev"
+          >
+            <span class="text-sm">Previous</span>
+            <span class="text-base text-stone-700 group-hover:text-stone-950 dark:text-stone-400 dark:group-hover:text-stone-200">
+              {prevPost.data.title}
+            </span>
+          </a>
+        ) : (
+          <div />
+        )}
+        {nextPost ? (
+          <a
+            href={`/${nextPost.slug}`}
+            class="flex flex-col gap-2 rounded-lg text-right no-underline transition-all duration-200"
+            rel="next"
+          >
+            <span class="text-sm">Next</span>
+            <span class="text-base text-stone-700 group-hover:text-stone-950 dark:text-stone-400 dark:group-hover:text-stone-200">
+              {nextPost.data.title}
+            </span>
+          </a>
+        ) : (
+          <div />
+        )}
+      </div>
+    </nav>
+  )
+}

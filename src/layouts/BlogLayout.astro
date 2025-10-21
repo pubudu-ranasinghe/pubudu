@@ -1,15 +1,20 @@
 ---
 import Header from "../components/Header.astro";
+import PostNavigation from "../components/PostNavigation.astro";
 import Layout from "./Layout.astro";
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   title: string;
   description: string;
   publishDate: Date;
   tags?: string[];
+  prevPost?: CollectionEntry<"blog"> | null;
+  nextPost?: CollectionEntry<"blog"> | null;
 }
 
-const { title, description, publishDate, tags } = Astro.props;
+const { title, description, publishDate, tags, prevPost, nextPost } =
+  Astro.props;
 
 // Generate keywords from tags if available
 const keywords =
@@ -37,6 +42,8 @@ const keywords =
     >
       <slot />
     </div>
+
+    <PostNavigation prevPost={prevPost} nextPost={nextPost} />
   </article>
 </Layout>
 

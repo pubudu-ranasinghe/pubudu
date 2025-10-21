@@ -1,5 +1,5 @@
 ---
-title: "Vibecoding Kavi: An experiment in Language Design with AI in 7 Days"
+title: "Vibecoding Kavi: An experiment in Language Design with AI in 7 Days — Day 1"
 description: "How I vibecoded Kavi: A modern pseudocode like language built in a week with AI"
 publishDate: 2025-10-14
 draft: false
@@ -50,3 +50,5 @@ This turned out to be quite useful as I was able to identify several issues that
 This helped me solidify the language spec and plan out the next steps. You can check out the finalised specification in the project [language-spec](https://github.com/pubudu-ranasinghe/kavi) here.
 
 That's it for day one. Tomorrow, we will be working on setting up the project structure and tooling.
+
+Stay tuned!
