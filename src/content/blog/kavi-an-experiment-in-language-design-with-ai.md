@@ -46,8 +46,9 @@ This turned out to be quite useful as I was able to identify several issues that
 - Incomplete Grammar: Gaps in the EBNF grammar, particularly around the `of` expression syntax.
 - Ambiguous Map Syntax: Parsing precedence was not clearly defined for inline versus block maps.
 - Underspecified features: A few important elements like returns, comments, destructuring, error handling, and strings were underspecified.
+- Well defined Type System: The type system needed clearer definitions around available types, type inference rules, and type coercion.
 
-This helped me solidify the language spec and plan out the next steps. You can check out the finalised specification in the project [language-spec](https://github.com/pubudu-ranasinghe/kavi) here.
+This helped me solidify the language spec and plan out the next steps. You can check out the finalised specification in the project [language-spec.md](https://github.com/pubudu-ranasinghe/Kavi/blob/3fbc93b89085c5e004f0c5c38904c2927d563bed/docs/language-spec.md) here.
 
 That's it for day one. Tomorrow, we will be working on setting up the project structure and tooling.
 

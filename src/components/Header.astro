@@ -20,6 +20,12 @@ const {
     class="text-base leading-7 font-medium text-stone-700 dark:text-amber-400"
   >
     <a class="no-underline" href="/">{name}</a>
-    {!compact && <div class="font-normal text-stone-500">{title}</div>}
+    {
+      !compact && (
+        <div class="font-normal text-stone-500 dark:text-stone-200">
+          {title}
+        </div>
+      )
+    }
   </h1>
 </header>
