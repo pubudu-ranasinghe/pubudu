@@ -61,6 +61,9 @@ const {
 
     <title>{title}</title>
 
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
     <!-- Theme initialization script - runs before page render to prevent FOUC -->
     <script is:inline>
       (function () {
@@ -278,5 +281,17 @@ const {
       "ss06" 1,
       "ss07" 1,
       "ss08" 1;
+  }
+
+  .inter {
+    font-family: Inter, sans-serif;
+    font-feature-settings:
+      "liga" 1,
+      "calt" 1; /* fix for Chrome */
+  }
+  @supports (font-variation-settings: normal) {
+    .inter {
+      font-family: InterVariable, sans-serif;
+    }
   }
 </style>
