@@ -4,10 +4,10 @@
 
 ### 1. Create OG Image ⚠️ **REQUIRED**
 
-- [ ] Create 1200x630px image with your name and title
-- [ ] Save as `/public/og-image.png`
-- [ ] Test locally: Check if image appears at `http://localhost:4321/og-image.png`
-- [ ] Recommended tools:
+- [x] Create 1200x630px image with your name and title
+- [x] Save as `/public/og-image.png`
+- [x] Test locally: Check if image appears at `http://localhost:4321/og-image.png`
+- [x] Recommended tools:
   - Figma template: 1200x630px canvas
   - Canva: Search "Open Graph Image" template
   - Design tips: Use your site's color scheme (stone tones), add your name prominently
@@ -22,10 +22,10 @@
 
 Test these URLs in your browser:
 
-- [ ] `https://pubuduranasinghe.com/robots.txt`
-- [ ] `https://pubuduranasinghe.com/sitemap-index.xml`
-- [ ] `https://pubuduranasinghe.com/sitemap-0.xml`
-- [ ] `https://pubuduranasinghe.com/og-image.png`
+- [x] `https://pubuduranasinghe.com/robots.txt`
+- [x] `https://pubuduranasinghe.com/sitemap-index.xml`
+- [x] `https://pubuduranasinghe.com/sitemap-0.xml`
+- [x] `https://pubuduranasinghe.com/og-image.png`
 
 ### 3. Test SEO Implementation
 
@@ -38,23 +38,23 @@ Test these URLs in your browser:
 
 ### 4. Add Property to Google Search Console
 
-- [ ] Go to https://search.google.com/search-console
-- [ ] Click "Add Property"
-- [ ] Enter: `pubuduranasinghe.com`
-- [ ] Verify ownership (DNS, HTML tag, or Google Analytics)
+- [x] Go to https://search.google.com/search-console
+- [x] Click "Add Property"
+- [x] Enter: `pubuduranasinghe.com`
+- [x] Verify ownership (DNS, HTML tag, or Google Analytics)
 
 ### 5. Submit Sitemap
 
-- [ ] In Google Search Console, go to "Sitemaps"
-- [ ] Add sitemap URL: `sitemap-index.xml`
-- [ ] Click "Submit"
-- [ ] Wait 1-2 days for indexing to begin
+- [x] In Google Search Console, go to "Sitemaps"
+- [x] Add sitemap URL: `sitemap-index.xml`
+- [x] Click "Submit"
+- [x] Wait 1-2 days for indexing to begin
 
 ### 6. Monitor Indexing
 
-- [ ] Check "Coverage" report for crawl errors
-- [ ] Review "Enhancements" for structured data status
-- [ ] Monitor "Performance" for search appearance
+- [x] Check "Coverage" report for crawl errors
+- [x] Review "Enhancements" for structured data status
+- [x] Monitor "Performance" for search appearance
 
 ---
 
@@ -64,24 +64,24 @@ Test these URLs in your browser:
 
 **Homepage (Person Schema):**
 
-- [ ] Go to https://validator.schema.org/
-- [ ] Enter: `https://pubuduranasinghe.com/`
-- [ ] Verify Person schema is valid
-- [ ] Check all social media URLs are correct
+- [x] Go to https://validator.schema.org/
+- [x] Enter: `https://pubuduranasinghe.com/`
+- [x] Verify Person schema is valid
+- [x] Check all social media URLs are correct
 
 **Blog Post (Article Schema):**
 
-- [ ] Go to https://validator.schema.org/
-- [ ] Enter: `https://pubuduranasinghe.com/building-modern-web-apps/`
-- [ ] Verify BlogPosting schema is valid
-- [ ] Confirm publish date is present
+- [x] Go to https://validator.schema.org/
+- [x] Enter: `https://pubuduranasinghe.com/building-modern-web-apps/`
+- [x] Verify BlogPosting schema is valid
+- [x] Confirm publish date is present
 
 ### 8. Test Rich Results Eligibility
 
-- [ ] Go to https://search.google.com/test/rich-results
-- [ ] Test homepage URL
-- [ ] Test at least one blog post URL
-- [ ] Verify no errors appear
+- [x] Go to https://search.google.com/test/rich-results
+- [x] Test homepage URL
+- [x] Test at least one blog post URL
+- [x] Verify no errors appear
 
 ---
 
@@ -91,17 +91,17 @@ Test these URLs in your browser:
 
 **Facebook/LinkedIn:**
 
-- [ ] Go to https://www.opengraph.xyz/
-- [ ] Enter your homepage URL
-- [ ] Verify image, title, and description appear correctly
-- [ ] Test at least one blog post URL
+- [x] Go to https://www.opengraph.xyz/
+- [x] Enter your homepage URL
+- [x] Verify image, title, and description appear correctly
+- [x] Test at least one blog post URL
 
 **Twitter:**
 
-- [ ] Go to https://cards-dev.twitter.com/validator
-- [ ] Enter your homepage URL
-- [ ] Verify Twitter Card appears correctly
-- [ ] Check image dimensions and text
+- [x] Go to https://cards-dev.twitter.com/validator
+- [x] Enter your homepage URL
+- [x] Verify Twitter Card appears correctly
+- [x] Check image dimensions and text
 
 ### 10. Live Social Share Test
 
@@ -118,9 +118,9 @@ Test these URLs in your browser:
 
 **Google:**
 
-- [ ] Search: `site:pubuduranasinghe.com`
-- [ ] Verify all pages are indexed
-- [ ] Check if descriptions look good
+- [x] Search: `site:pubuduranasinghe.com`
+- [x] Verify all pages are indexed
+- [x] Check if descriptions look good
 
 **Bing:**
 

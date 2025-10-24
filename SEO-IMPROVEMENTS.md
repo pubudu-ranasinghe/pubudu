@@ -152,23 +152,23 @@
 - [x] Build succeeds without errors
 - [x] Sitemap generates correctly
 - [x] All pages included in sitemap
-- [ ] Create actual OG image at `/public/og-image.png`
+- [x] Create actual OG image at `/public/og-image.png`
 
 ### After Deployment
 
 Test these URLs:
 
-- [ ] https://pubuduranasinghe.com/robots.txt
-- [ ] https://pubuduranasinghe.com/sitemap-index.xml
-- [ ] https://pubuduranasinghe.com/sitemap-0.xml
+- [x] https://pubuduranasinghe.com/robots.txt
+- [x] https://pubuduranasinghe.com/sitemap-index.xml
+- [x] https://pubuduranasinghe.com/sitemap-0.xml
 
 Validate with these tools:
 
-- [ ] Google Search Console - Submit sitemap
-- [ ] https://www.opengraph.xyz/ - Test OG tags
-- [ ] https://cards-dev.twitter.com/validator - Test Twitter cards
-- [ ] https://validator.schema.org/ - Validate structured data
-- [ ] https://search.google.com/test/rich-results - Test rich results eligibility
+- [x] Google Search Console - Submit sitemap
+- [x] https://www.opengraph.xyz/ - Test OG tags
+- [x] https://cards-dev.twitter.com/validator - Test Twitter cards
+- [x] https://validator.schema.org/ - Validate structured data
+- [x] https://search.google.com/test/rich-results - Test rich results eligibility
 
 ---
 
